@@ -9,8 +9,9 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
+  background-position: top;
+  overflow-x: hidden;
 }
-
 .text{
   color: linear-gradient(97.89deg, #FFFFFF 70.67%, rgba(117, 122, 140, 0) 108.55%);
 }
@@ -20,4 +21,52 @@ body {
 .DashSecond{
   font-family: "Plus Jakarta Sans", sans-serif;
 
+}
+.MuiChartsLegend-root{
+  display: none;
+}
+/* .MuiChartsAxis-directionX{
+  display: none;
+} */
+.dashboard::-webkit-scrollbar{
+width: 0px;
+}
+.MuiChartsAxis-line{
+  display: none;
+}
+.MuiBarElement-series-auto-generated-id-0{
+  /* display: none; */
+  width: 30px;
+}
+
+.MuiMarkElement-series-auto-generated-id-0{
+  display: none;
+}
+.MuiMarkElement-series-auto-generated-id-1{
+display: none
+}
+.css-iyvwpn-MuiChartsSurface-root{
+  background: linear-gradient(126.97deg, rgb(6, 11, 40) 28.26%, rgb(10, 14, 35) 91.2%);
+  border-radius: 20px;
+}
+.css-19syksp-MuiTableCell-root{
+  border-bottom: 1px solid rgba(128, 128, 128, 0.76);
+}
+.css-1dc80h3-MuiTableCell-root{
+  border-bottom: 1px solid rgba(128, 128, 128, 0.76);
+}
+.css-knooo7-MuiTableCell-root{
+  border-bottom: 1px solid rgba(128, 128, 128, 0.76);
+}
+.css-ygr16v-MuiTableCell-root{
+  border-bottom: 1px solid rgba(128, 128, 128, 0.76);
+}
+.css-da1s8z-MuiTableCell-root{
+  border-bottom: 1px solid rgba(128, 128, 128, 0.76);
+}
+.MuiTableCell-alignLeft{
+  border-bottom: 1px solid rgba(128, 128, 128, 0.76);
+}
+.css-1c40zev-MuiTableCell-root{
+  border-bottom: 1px solid rgba(128, 128, 128, 0.76);
 }

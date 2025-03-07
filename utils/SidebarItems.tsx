@@ -1,12 +1,11 @@
-import Image from "next/image";
 import React from "react";
 import { FaHome } from "react-icons/fa";
 import { MdBarChart } from "react-icons/md";
 import { BsCreditCardFill } from "react-icons/bs";
 import { HiWrench } from "react-icons/hi2";
+import { IoRocketSharp } from "react-icons/io5";
 import { IoPerson } from "react-icons/io5";
 import { IoDocument } from "react-icons/io5";
-import { IoRocketSharp } from "react-icons/io5";
 
 
 const SidebarItems = () => {
