@@ -1,5 +1,4 @@
 "use client";
-import Footer from "@/components/Footer";
 import DashFirstComponent from "@/dashboardComponents/DashFirstComponent";
 import DashLastComponent from "@/dashboardComponents/DashLastComponent";
 import DashSecondComponent from "@/dashboardComponents/DashSecondComponent";
@@ -9,12 +8,11 @@ import React from "react";
 
 export default function Dashboard() {
   return (
-    <div className="dashboard w-full h-auto p-6 relative overflow-y-auto mt-[110px] ">
+    <div className="dashboard w-full h-auto p-6 relative overflow-y-auto z-0 pt-[110px] ">
       <DashFirstComponent/>
       <DashSecondComponent/>
       <DashThirdComponent/>
       <DashLastComponent/>
-      <Footer/>
     </div>
   );
 }

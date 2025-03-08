@@ -6,29 +6,31 @@ import { HiWrench } from "react-icons/hi2";
 import { IoRocketSharp } from "react-icons/io5";
 import { IoPerson } from "react-icons/io5";
 import { IoDocument } from "react-icons/io5";
+import Link from "next/link";
 
 
 const SidebarItems = () => {
   return (
     <div className="flex flex-col gap-3">
-      <div className="flex items-center gap-4 py-[10px] pr-3 pl-4 w-full bg-[#1a1f37] hover:bg-[#1a1f37] cursor-pointer rounded-2xl">
+      <Link href="/dashboard" className="flex items-center gap-4 py-[10px] pr-3 pl-4 w-full bg-[#1a1f37] hover:bg-[#1a1f37] cursor-pointer rounded-2xl">
         <div className="w-8 h-8 flex items-center justify-center bg-[#0075ff] rounded-xl text-white">
         <FaHome />
         </div>
         <p className="text-sm font-normal">Dashboard</p>
-      </div>
-      <div className="flex items-center gap-4 py-[10px] pr-3 pl-4 w-full rounded-2xl cursor-pointer">
+      </Link>
+      <Link href="/tables" className="flex items-center gap-4 py-[10px] pr-3 pl-4 w-full rounded-2xl cursor-pointer">
         <div className="w-8 h-8 flex items-center justify-center bg-[#1a1f37] text-[#0075ff]  rounded-xl">
            <MdBarChart/>
         </div>
         <p className="text-sm font-normal">Tables</p>
-      </div>
-      <div className="flex items-center gap-4 py-[10px] pr-3 pl-4 w-full  rounded-2xl cursor-pointer">
+      </Link>
+
+      <Link href="/billing" className="flex items-center gap-4 py-[10px] pr-3 pl-4 w-full  rounded-2xl cursor-pointer">
         <div className="w-8 h-8 flex items-center justify-center bg-[#1a1f37] text-[#0075ff] rounded-xl">
             <BsCreditCardFill/>
         </div>
         <p className="text-sm font-normal">Billing</p>
-      </div>
+      </Link>
       <div className="flex items-center gap-4 py-[10px] pr-3 pl-4 w-full  rounded-2xl cursor-pointer">
         <div className="w-8 h-8 flex items-center justify-center bg-[#1a1f37] text-[#0075ff] rounded-xl">
             <HiWrench/>

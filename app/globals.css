@@ -11,6 +11,7 @@ body {
   height: 100vh;
   background-position: top;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 .text{
   color: linear-gradient(97.89deg, #FFFFFF 70.67%, rgba(117, 122, 140, 0) 108.55%);
@@ -65,7 +66,7 @@ display: none
   border-bottom: 1px solid rgba(128, 128, 128, 0.76);
 }
 .MuiTableCell-alignLeft{
-  border-bottom: 1px solid rgba(128, 128, 128, 0.76);
+  border-bottom: 1px solid #808080c2;
 }
 .css-1c40zev-MuiTableCell-root{
   border-bottom: 1px solid rgba(128, 128, 128, 0.76);

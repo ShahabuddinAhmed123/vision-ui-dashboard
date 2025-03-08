@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
-import Image from "next/image";
-// import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar";
+// import Footer from "@/components/Footer";
 
 
 export const metadata: Metadata = {
@@ -21,9 +21,9 @@ export default function RootLayout({
         className="flex"
         >
         <Sidebar/>
+        <Navbar/>
         {children}
-        {/* <Navbar/> */}
-          
+        {/* <Footer/> */}
       </body>
     </html>
   );
