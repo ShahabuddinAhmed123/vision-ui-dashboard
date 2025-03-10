@@ -42,18 +42,24 @@ export const PROFILE_BOXES_DATA = {
                 title: "Project #2",
                 heading: "Modern",
                 description: "As Uber works through a huge amount of internal management turmoil.",
+                inverse: true
+
             },
             {
                 image: imageTwo,
                 title: "Project #1",
                 heading: "Scandinavian",
                 description: "Music is something that every person has his or her own specific opinion about.",
+                inverse: true
+
             },
             {
                 image: imageThree,
                 title: "Project #3",
                 heading: "Minimalist",
                 description: "Different people have different taste, and various types of music.",
+                inverse: true
+
             },
         ]
     } 

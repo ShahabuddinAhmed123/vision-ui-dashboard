@@ -4,13 +4,6 @@ import React, { useState } from "react";
 import { PROFILE_BOXES_DATA } from "@/constants/ProfileBoxesData";
 import Image from "next/image";
 
-interface BoxThreeItems {
-  image: HTMLImageElement;
-  title: string;
-  heading: string;
-  description: string;
-}
-
 
 const ProfileComponent = () => {
   const boxData = PROFILE_BOXES_DATA;
