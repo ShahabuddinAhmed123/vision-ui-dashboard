@@ -1,10 +1,20 @@
+'use client'
+
+import { usePathname } from 'next/navigation'
 import React from 'react'
 
 const Navbar = () => {
+  const pathName = usePathname();
   return (
+    <>
+    {
+      pathName !== "/sign-in" && pathName !== "/sign-up" &&(
     <div className='h-[75px] absolute bg-transparent z-50 w-[83.5%] top-3 rounded-2xl mx-5 border left-[270px]'>
       Navbar
     </div>
+      )
+    }
+    </>
   )
 }
 

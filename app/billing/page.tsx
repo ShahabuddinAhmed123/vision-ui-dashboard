@@ -549,7 +549,7 @@ const Billig = () => {
             paddingTop: "22px",
             paddingLeft: "22px",
             paddingRight: "22px",
-            paddingBottom: "50px",
+            paddingBottom: "70px",
 
           }}
         >
@@ -587,6 +587,7 @@ const Billig = () => {
               fontWeight: "600",
               color: "#a0aec0",
               marginBottom: "16px",
+              height: "32px"
             }}
           >
             NEWEST
@@ -638,10 +639,9 @@ const Billig = () => {
               fontSize: "12px",
               fontWeight: "600",
               color: "#a0aec0",
-              marginBottom: "16px",
-              marginTop: "8px",
+              marginBottom: "18px",
               height: "32px",
-              paddingTop: "8px"
+              paddingTop: "18px"
             }}
           >
             YESTERDAY

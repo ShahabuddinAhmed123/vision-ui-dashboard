@@ -56,9 +56,9 @@ export const BILLING_DATA = {
                 name: "Netflix",
                 date: "27 March 2020, at 12:30 PM",
                 price: "-$2,500",
-                borderColor: "danger",
+                borderColor: "#a0aec0",
                 icon: <FaArrowDown/>,
-                textColor: "danger"
+                textColor: "#a0aec0"
             },
             {
                 name: "Apple",

@@ -1,61 +1,41 @@
+"use client";
+
 import React from "react";
-import { FaHome } from "react-icons/fa";
-import { MdBarChart } from "react-icons/md";
-import { BsCreditCardFill } from "react-icons/bs";
-import { HiWrench } from "react-icons/hi2";
-import { IoRocketSharp } from "react-icons/io5";
-import { IoPerson } from "react-icons/io5";
-import { IoDocument } from "react-icons/io5";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { SIDEBAR_ITEMS } from "@/constants/sidebarItems"
 
+const SidebarItems: React.FC = () => {
+  const pathname = usePathname();
 
-const SidebarItems = () => {
   return (
     <div className="flex flex-col gap-3">
-      <Link href="/dashboard" className="flex items-center gap-4 py-[10px] pr-3 pl-4 w-full bg-[#1a1f37] hover:bg-[#1a1f37] cursor-pointer rounded-2xl">
-        <div className="w-8 h-8 flex items-center justify-center bg-[#0075ff] rounded-xl text-white">
-        <FaHome />
-        </div>
-        <p className="text-sm font-normal">Dashboard</p>
-      </Link>
-      <Link href="/tables" className="flex items-center gap-4 py-[10px] pr-3 pl-4 w-full rounded-2xl cursor-pointer">
-        <div className="w-8 h-8 flex items-center justify-center bg-[#1a1f37] text-[#0075ff]  rounded-xl">
-           <MdBarChart/>
-        </div>
-        <p className="text-sm font-normal">Tables</p>
-      </Link>
+     
+      {Object.entries(SIDEBAR_ITEMS.categories).map(([category, items]) => (
+        <div key={category}>
+          
+          {category !== "SidebarOne" && (
+            <h1 className="uppercase text-xs font-semibold mx-4 mt-3 py-2">Account Pages</h1>
+          )}
 
-      <Link href="/billing" className="flex items-center gap-4 py-[10px] pr-3 pl-4 w-full  rounded-2xl cursor-pointer">
-        <div className="w-8 h-8 flex items-center justify-center bg-[#1a1f37] text-[#0075ff] rounded-xl">
-            <BsCreditCardFill/>
+          {items.map((item) => (
+            <Link 
+              key={item.path} 
+              href={item.path}
+              className={`flex items-center gap-4 py-[10px] pr-3 pl-4 w-full rounded-2xl cursor-pointer transition-all
+                ${pathname === item.path ? "bg-[#1a1f37] text-white" : "text-gray-400 "}`}
+            >
+              <div 
+                className={`w-8 h-8 flex items-center justify-center rounded-xl 
+                  ${pathname === item.path ? "bg-[#0075ff] text-white" : "bg-[#1a1f37] text-[#0075ff]"}`}
+              >
+                {item.icon}
+              </div>
+              <p className="text-sm font-normal">{item.SidebarName}</p>
+            </Link>
+          ))}
         </div>
-        <p className="text-sm font-normal">Billing</p>
-      </Link>
-      <div className="flex items-center gap-4 py-[10px] pr-3 pl-4 w-full  rounded-2xl cursor-pointer">
-        <div className="w-8 h-8 flex items-center justify-center bg-[#1a1f37] text-[#0075ff] rounded-xl">
-            <HiWrench/>
-        </div>
-        <p className="text-sm font-normal">RTL</p>
-      </div>
-      <h1 className="uppercase text-xs font-semibold mx-4 mt-3">Account pages</h1>
-      <div className="flex items-center gap-4 py-[10px] pr-3 pl-4 w-full  rounded-2xl cursor-pointer">
-        <div className="w-8 h-8 flex items-center justify-center bg-[#1a1f37] text-[#0075ff] rounded-xl">
-            <IoPerson/>
-        </div>
-        <p className="text-sm font-normal">Profile</p>
-      </div>
-      <div className="flex items-center gap-4 py-[10px] pr-3 pl-4 w-full  rounded-2xl cursor-pointer">
-        <div className="w-8 h-8 flex items-center justify-center bg-[#1a1f37] text-[#0075ff] rounded-xl">
-            <IoDocument/>
-        </div>
-        <p className="text-sm font-normal">SignIn</p>
-      </div>
-      <div className="flex items-center gap-4 py-[10px] pr-3 pl-4 w-full  rounded-2xl cursor-pointer">
-        <div className="w-8 h-8 flex items-center justify-center bg-[#1a1f37] text-[#0075ff] rounded-xl">
-            <IoRocketSharp/>
-        </div>
-        <p className="text-sm font-normal">SignUp</p>
-      </div>
+      ))}
     </div>
   );
 };
