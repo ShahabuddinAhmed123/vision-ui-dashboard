@@ -1,6 +1,7 @@
+'use client'
+
 import {
   Avatar,
-  AvatarGroup,
   Box,
   LinearProgress,
   Paper,
@@ -11,6 +12,7 @@ import {
   TableRow,
   Typography,
 } from "@mui/material";
+import { AvatarGroup } from "@mui/material"
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { SlOptionsVertical } from "react-icons/sl";
