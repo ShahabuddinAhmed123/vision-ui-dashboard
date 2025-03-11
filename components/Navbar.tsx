@@ -1,6 +1,7 @@
 'use client'
 
 import { Box, Typography } from '@mui/material';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import { AiFillHome } from 'react-icons/ai';
@@ -74,6 +75,7 @@ useEffect(() => {
           </div>
           <input type="text" className='text-[12px] placeholder:text-[12px]' placeholder='Type here...' />
         </Box>
+        <Link href="/sign-in">
         <Box sx={{
           display: "flex",
           alignItems: "center",
@@ -83,6 +85,7 @@ useEffect(() => {
           <IoPersonCircleSharp/>
           <p className='text-[14px] font-semibold'>Sign in</p>
         </Box>
+        </Link>
         <IoSettingsSharp/>
         <FaBell/>
       </Box>

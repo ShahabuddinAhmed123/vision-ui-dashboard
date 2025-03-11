@@ -18,7 +18,7 @@ const SignIn = () => {
     const onLogin = () => {
         setErrorMessage("");
         signInWithEmailAndPassword(auth, email, password)
-          .then((userCredential) => {
+          .then(() => {
             setEmail("");
             setPassword("");
             toast.success("Logged in successfully!", { position: "top-right", autoClose: 2000 });
@@ -200,7 +200,7 @@ const SignIn = () => {
               }}
             >
               <label
-                htmlFor="emailInput"
+                htmlFor="passwordInput"
                 className="text-sm font-semibold mb-2 ml-1 h-8 pt-1"
               >
                 Password
@@ -210,7 +210,7 @@ const SignIn = () => {
               value={password}
               name="password"
                 type="password"
-                id="emailInput"
+                id="passwordInput"
                 className="w-[300px] h-10 rounded-[15px] bg-[rgb(15, 21, 53)] py-2 px-3 text-sm active:outline-[1px] outline-blue-400 placeholder:text-xs"
                 style={{
                   border: "2px solid rgb(74, 85, 104)",

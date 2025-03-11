@@ -10,7 +10,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import AuthPagesFooter from "@/components/AuthPagesFooter";
-import { getAuth, updateProfile } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 
 const SignUp = () => {
   const router = useRouter();
@@ -24,6 +24,7 @@ const SignUp = () => {
     await createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
+        console.log(user)
         router.push("/sign-in");
         toast.success("Signed up successfully 🎉", {
           position: "top-right",
@@ -41,18 +42,18 @@ const SignUp = () => {
 
 const auth = getAuth();
 
-const handleNameUpdate = async (newName: string) => {
-  if (auth.currentUser) {
-    try {
-      await updateProfile(auth.currentUser, {
-        displayName: newName,
-      });
-      console.log("Profile updated!");
-    } catch (error) {
-      console.error("Error updating profile:", error);
-    }
-  }
-};
+// const handleNameUpdate = async (newName: string) => {
+//   if (auth.currentUser) {
+//     try {
+//       await updateProfile(auth.currentUser, {
+//         displayName: newName,
+//       });
+//       console.log("Profile updated!");
+//     } catch (error) {
+//       console.error("Error updating profile:", error);
+//     }
+//   }
+// };
 
 
   return (
@@ -250,14 +251,14 @@ const handleNameUpdate = async (newName: string) => {
                   }}
                 >
                   <label
-                    htmlFor="emailInput"
+                    htmlFor="nameInput"
                     className="text-sm font-semibold mb-2 ml-1 h-8 pt-1"
                   >
                     Name
                   </label>
                   <input
                     type="text"
-                    id="emailInput"
+                    id="nameInput"
                     className="w-[300px] h-10 rounded-[15px] bg-[rgb(15, 21, 53)] py-2 px-3 text-sm active:outline-[1px] outline-blue-400 placeholder:text-xs"
                     style={{
                       border: "2px solid rgb(74, 85, 104)",
@@ -301,7 +302,7 @@ const handleNameUpdate = async (newName: string) => {
                   }}
                 >
                   <label
-                    htmlFor="emailInput"
+                    htmlFor="passwordInput"
                     className="text-sm font-semibold mb-2 ml-1 h-8 pt-1"
                   >
                     Password
@@ -311,7 +312,7 @@ const handleNameUpdate = async (newName: string) => {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                     type="password"
-                    id="emailInput"
+                    id="passwordInput"
                     className="w-[300px] h-10 rounded-[15px] bg-[rgb(15, 21, 53)] py-2 px-3 text-sm active:outline-[1px] outline-blue-400 placeholder:text-xs"
                     style={{
                       border: "2px solid rgb(74, 85, 104)",
