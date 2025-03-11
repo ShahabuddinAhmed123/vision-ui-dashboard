@@ -9,28 +9,22 @@ import { HiMiniSlash } from 'react-icons/hi2';
 import { IoPersonCircleSharp, IoSettingsSharp } from 'react-icons/io5';
 
 const Navbar = () => {
-    const path = usePathname();
   const pathName = usePathname();
 const [nameOfPath, setNameOfPath] = useState("");
 
 useEffect(() => {
-  if(path === "/tables"){
-    setNameOfPath("Tables")
+  if (pathName === "/tables") {
+    setNameOfPath("Tables");
+  } else if (pathName === "/billing") {
+    setNameOfPath("Billing");
+  } else if (pathName === "/rtl") {
+    setNameOfPath("RTL");
+  } else if (pathName === "/profile") {
+    setNameOfPath("Profile");
+  } else {
+    setNameOfPath("Dashboard");
   }
-  else if(path === "/billing"){
-    setNameOfPath("Billing")
-  }
-  else if(path === "/rtl"){
-    setNameOfPath("RTL")
-  }
-  else if(path === "/profile"){
-    setNameOfPath("Profile")
-  }
-  else{
-    setNameOfPath("Dashboard")
-  }
-}, [setNameOfPath])
-
+}, [pathName]);
 
   return (
     <>
