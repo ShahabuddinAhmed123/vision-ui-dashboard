@@ -5,6 +5,7 @@ import { Box, CircularProgress, Paper, Typography } from "@mui/material";
 import { styled } from "@mui/material";
 import { IoArrowForward } from "react-icons/io5";
 import { SlOptions } from "react-icons/sl";
+import { FaFaceSmile } from "react-icons/fa6";
 
 const Component = styled("div")({
   width: "100%",
@@ -112,6 +113,9 @@ const DashSecondComponent = () => {
             From all projects
           </Typography>
 
+          <Box sx={{
+              position: "relative",
+          }}>
           <CircularProgress
             variant="determinate"
             value={70}
@@ -119,10 +123,27 @@ const DashSecondComponent = () => {
             style={{
               marginLeft: "70px",
               marginTop: " 20px",
-              rotate: "35deg",
-              position: "relative",
+              rotate: "30deg",
+            border: "2px solid linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%) border-box"
             }}
-          />
+            />
+            <Box sx={{
+              width: "50px",
+              height: "50px",
+              borderRadius: "100%",
+              justifyContent: "center",
+              alignItems: "center",
+              background: "#0075ff",
+              position: "absolute",
+              top: "50%",
+              left: "45%",
+              transform: "translate(-50%, -50%)",
+              padding: "13px",
+              color: "white",
+              fontSize: "28px"
+            }}>
+              <FaFaceSmile/>
+            </Box>
           <Box
             sx={{
               width: "297px",
@@ -131,20 +152,20 @@ const DashSecondComponent = () => {
               background:
                 "linear-gradient(126.97deg, rgb(6, 11, 40) 28.26%, rgb(10, 14, 35) 91.2%)",
               borderRadius: "20px",
-              top: "350px",
+              bottom: "-35px",
               marginLeft: "20px",
               paddingY: "18px",
               paddingX: "22px",
               display: "flex",
               justifyContent: "space-between",
             }}
-          >
+            >
             <Typography
               sx={{
                 fontSize: "12px",
                 color: "#a0aec0",
               }}
-            >
+              >
               0%
             </Typography>
             <Box
@@ -153,7 +174,7 @@ const DashSecondComponent = () => {
                 flexDirection: "column",
                 alignItems: "center",
               }}
-            >
+              >
               <Typography
                 sx={{
                   fontSize: "30px",
@@ -161,7 +182,7 @@ const DashSecondComponent = () => {
                   lineHeight: "30px",
                   fontWeight: "600",
                 }}
-              >
+                >
                 95%
               </Typography>
               <Typography
@@ -169,7 +190,7 @@ const DashSecondComponent = () => {
                   fontSize: "12px",
                   color: "#a0aec0",
                 }}
-              >
+                >
                 Based on likes
               </Typography>
             </Box>
@@ -178,10 +199,11 @@ const DashSecondComponent = () => {
                 fontSize: "12px",
                 color: "#a0aec0",
               }}
-            >
+              >
               100%
             </Typography>
           </Box>
+              </Box>
         </Box>
       </Paper>
       {/* //////////// */}

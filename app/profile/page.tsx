@@ -4,7 +4,6 @@ import React from "react";
 import { AiFillFacebook } from "react-icons/ai";
 import { FaInstagram, FaTwitter } from "react-icons/fa";
 import { IoMdArrowRoundForward } from "react-icons/io";
-
 const Profile = () => {
   return (
     <div className="pt-[110px] overflow-y-auto w-full h-full px-6">
@@ -26,7 +25,6 @@ const Profile = () => {
           sx={{
             display: "flex",
             alignItems: "center",
-            gap: "",
           }}
         >
           <Box

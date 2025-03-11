@@ -6,7 +6,7 @@ import { MdDonutLarge, MdVpnKey } from "react-icons/md";
 
 const AuthPagesNavbar = () => {
   return (
-    <div className="h-[75px] bg-transparent z-50 w-[60%] mx-auto mt-3 rounded-2xl mx-5 border border-gray-500 backdrop-blur-md fixed top-1 py-4 px-6 left-1/2 transform translate-x-[-50%] flex items-center justify-between">
+    <div className="h-[75px] bg-transparent z-50 w-[60%] mx-auto mt-3 rounded-2xl mx-5 border border-gray-500 backdrop-blur-xl fixed top-1 py-4 px-6 left-1/2 transform translate-x-[-50%] flex items-center justify-between">
       <a href="/">
         <img src="/vision-ui-logo.png" alt="logo" className=" w-[129px]" />
       </a>
@@ -27,7 +27,7 @@ const AuthPagesNavbar = () => {
             Dashboard
           </Typography>
         </Link>
-        <Link href="/" className="flex items-center p-2 mx-2 gap-1">
+        <Link href="/profile" className="flex items-center p-2 mx-2 gap-1">
           <IoPerson style={{ marginBottom: "2px" }} />
           <Typography
             sx={{
@@ -37,7 +37,7 @@ const AuthPagesNavbar = () => {
             Profile
           </Typography>
         </Link>
-        <Link href="/" className="flex items-center p-2 mx-2 gap-1">
+        <Link href="/sign-up" className="flex items-center p-2 mx-2 gap-1">
           <IoPersonCircle style={{ marginBottom: "2px" }} />
           <Typography
             sx={{
@@ -47,7 +47,7 @@ const AuthPagesNavbar = () => {
             Sign Up
           </Typography>
         </Link>
-        <Link href="/" className="flex items-center p-2 mx-2 gap-1">
+        <Link href="/sign-in" className="flex items-center p-2 mx-2 gap-1">
           <MdVpnKey style={{ marginBottom: "2px" }} />
           <Typography
             sx={{

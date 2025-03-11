@@ -59,7 +59,6 @@ export const PROFILE_BOXES_DATA = {
                 heading: "Minimalist",
                 description: "Different people have different taste, and various types of music.",
                 inverse: true
-
             },
         ]
     } 
