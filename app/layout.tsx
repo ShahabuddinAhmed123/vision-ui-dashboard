@@ -3,7 +3,6 @@
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import Navbar from "@/components/Navbar";
-// import Footer from "@/components/Footer";
 import AuthProvider from "@/context/AuthContext";
 
 
@@ -22,13 +21,11 @@ export default function RootLayout({
       <body
         className="flex"
         >
-          
         <Sidebar/>
         <Navbar/>
         <AuthProvider>
         {children}
         </AuthProvider>
-        {/* <Footer/> */}
       </body>
     </html>
   );

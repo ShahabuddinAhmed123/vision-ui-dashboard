@@ -64,7 +64,7 @@ export const DASH_LAST_DATA = {
         budget: "$2,000",
         completion: "40%",
         avatar: ["/avatar1.webp", "/avatar2.webp"],
-        images: "/iconFive.svg",
+        images: "/iconSix.svg",
         percentage: 40,
       },
     ],

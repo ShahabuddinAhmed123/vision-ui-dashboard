@@ -5,7 +5,6 @@ import { Box, Typography } from "@mui/material";
 import Link from "next/link";
 import React, { useState } from "react";
 import { FaApple, FaFacebook, FaGoogle } from "react-icons/fa";
-import { auth } from "@/firebase/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
@@ -59,14 +58,13 @@ const auth = getAuth();
   return (
     <div className="w-full h-auto flex items-center gap-0 overflow-y-auto">
       <AuthPagesNavbar />
-      <Box
-        sx={{
-          width: "50%",
-          height: "100%",
+      <div
+        style={{
           backgroundImage: "url(/sign-up-background.png)",
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
+        className="w-1/2 h-full max-[1024px]:hidden"
       >
         <Box
           sx={{
@@ -76,6 +74,7 @@ const auth = getAuth();
             alignItems: "center",
             justifyContent: "center",
             flexDirection: "column",
+            textAlign: "center"
           }}
         >
           <Typography
@@ -103,34 +102,20 @@ const auth = getAuth();
             <span className="opacity-[0.5]">ARD</span>
           </Typography>
         </Box>
-      </Box>
+      </div>
       {/* ////////////////////////// */}
-      <Box
-        sx={{
-          width: "50%",
-          height: "100%",
+      <div
+        style={{
           background:
             "linear-gradient(159.02deg, rgb(15, 18, 59) 14.25%, rgb(9, 13, 46) 56.45%, rgb(2, 5, 21) 86.14%) transparent",
-          overflowY: "auto",
         }}
+        className="w-1/2 overflow-y-auto overflow-x-none h-full max-[1024px]:w-full max-[1024px]:flex max-[1024px]:justify-center"
       >
-        <Box
-          sx={{
-            marginRight: "100px",
-            width: "450px",
-            marginTop: "160px",
-            marginLeft: "65px",
-            display: "flex",
-            flexDirection: "column",
-          }}
+        <div 
+        className="mr-[100px] w-[450px] h-full mt-[160px] ml-[65px] flex flex-col max-[1024px]:mx-auto max-[768px]:w-full"
         >
-          <Box
-            sx={{
-              paddingTop: "24px",
-              paddingX: "24px",
-              marginX: "50px",
-              width: "auto",
-            }}
+          <div
+          className="pt-6 px-6 mx-[50px] w-auto mb-[35px] max-[1024px]:mb-0 max-[480px]:mx-0"
           >
             <Typography
               sx={{
@@ -153,28 +138,20 @@ const auth = getAuth();
               Use these awesome forms to login or create new account in your
               project for free.
             </Typography>
-          </Box>
-          <Box
-            sx={{
-              width: "100%",
-              paddingX: "24px",
-              marginTop: "60px",
-              marginBottom: "50px",
-            }}
+          </div>
+
+          <div
+          className="w-full px-6 mt-[60px] mb-[50px] h-auto max-[480px]:mx-0"
           >
-            <Box
-              sx={{
-                width: "100%",
-                height: "auto",
-                padding: "45px",
+            <div
+              style={{
                 background: "rgb(19, 21, 56)",
-                borderRadius: "20px",
                 border: "2px solid transparent",
                 borderImage:
                   "radial-gradient(94.43% 69.43% at 50% 50%, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%) 1",
                 overflow: "hidden",
-                // backgroundClip: "padding-box"
               }}
+              className="w-full h-auto p-[45px] rounded-[20px] max-[768px]:p-5"
             >
               <Typography
                 sx={{
@@ -196,7 +173,7 @@ const auth = getAuth();
                 }}
               >
                 <button
-                  className="w-[74px] h-[74px] border-2 p-6 border-transparent text-[22px]"
+                  className="w-[74px] h-[74px] max-[768px]:w-[60px] max-[768px]:h-[60px] max-[768px]:p-4 border-2 p-6 border-transparent text-[22px]"
                   style={{
                     borderImage:
                       "radial-gradient(94.43% 69.43% at 50% 50%, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%) 1",
@@ -206,7 +183,7 @@ const auth = getAuth();
                   <FaFacebook />
                 </button>
                 <button
-                  className="w-[74px] h-[74px] border-2 p-6 border-transparent text-[22px] ml-4"
+                  className="w-[74px] h-[74px] max-[768px]:w-[60px] max-[768px]:h-[60px] max-[768px]:p-4 border-2 p-6 border-transparent text-[22px] ml-4"
                   style={{
                     borderImage:
                       "radial-gradient(94.43% 69.43% at 50% 50%, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%) 1",
@@ -216,7 +193,7 @@ const auth = getAuth();
                   <FaApple />
                 </button>
                 <button
-                  className="w-[74px] h-[74px] border-2 p-6 border-transparent text-[22px] ml-4"
+                  className="w-[74px] h-[74px] max-[768px]:w-[60px] max-[768px]:h-[60px] max-[768px]:p-4 border-2 p-6 border-transparent text-[22px] ml-4"
                   style={{
                     borderImage:
                       "radial-gradient(94.43% 69.43% at 50% 50%, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%) 1",
@@ -259,7 +236,7 @@ const auth = getAuth();
                   <input
                     type="text"
                     id="nameInput"
-                    className="w-[300px] h-10 rounded-[15px] bg-[rgb(15, 21, 53)] py-2 px-3 text-sm active:outline-[1px] outline-blue-400 placeholder:text-xs"
+                    className="w-[300px] max-[768px]:w-full h-10 rounded-[15px] bg-[rgb(15, 21, 53)] py-2 px-3 text-sm active:outline-[1px] outline-blue-400 placeholder:text-xs"
                     style={{
                       border: "2px solid rgb(74, 85, 104)",
                     }}
@@ -286,7 +263,7 @@ const auth = getAuth();
                     required
                     type="email"
                     id="emailInput"
-                    className="w-[300px] h-10 rounded-[15px] bg-[rgb(15, 21, 53)] py-2 px-3 text-sm active:outline-[1px] outline-blue-400 placeholder:text-xs"
+                    className="w-[300px] max-[768px]:w-full h-10 rounded-[15px] bg-[rgb(15, 21, 53)] py-2 px-3 text-sm active:outline-[1px] outline-blue-400 placeholder:text-xs"
                     style={{
                       border: "2px solid rgb(74, 85, 104)",
                     }}
@@ -313,7 +290,7 @@ const auth = getAuth();
                     required
                     type="password"
                     id="passwordInput"
-                    className="w-[300px] h-10 rounded-[15px] bg-[rgb(15, 21, 53)] py-2 px-3 text-sm active:outline-[1px] outline-blue-400 placeholder:text-xs"
+                    className="w-[300px] max-[768px]:w-full h-10 rounded-[15px] bg-[rgb(15, 21, 53)] py-2 px-3 text-sm active:outline-[1px] outline-blue-400 placeholder:text-xs"
                     style={{
                       border: "2px solid rgb(74, 85, 104)",
                     }}
@@ -366,11 +343,11 @@ const auth = getAuth();
                   </Link>
                 </Typography>
               </Box>
-            </Box>
-          </Box>
+            </div>
+          </div>
           <AuthPagesFooter />
-        </Box>
-      </Box>
+        </div>
+      </div>
     </div>
   );
 };

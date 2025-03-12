@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className='w-full h-[72px] mt-[40px] flex items-center justify-between'>
+    <div className='w-full h-[72px] flex items-center justify-between'>
       <p className='text-[14px]'>
       @ 2021, Made with ❤️    by Simmmple&Creative Timfor a better web
       </p>

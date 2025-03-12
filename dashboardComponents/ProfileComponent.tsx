@@ -23,16 +23,16 @@ const ProfileComponent = () => {
   };
 
   return (
-    <div className="flex gap-6 w-full">
+    <div className="flex gap-6 w-full mb-6 max-[1440px]:flex-col ">
       <Paper
         sx={{
           padding: "22px",
-          width: "23.5%",
           background:
             "linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%) border-box",
           borderRadius: "20px",
           color: "white",
         }}
+        className="w-[23.5%] max-[1440px]:w-full"
       >
         <Typography
           sx={{ fontSize: "18px", fontWeight: "600", marginBottom: "30px" }}
@@ -131,9 +131,9 @@ const ProfileComponent = () => {
           ))}
         </Box>
       </Paper>
+      {/* ////////////////// */}
       <Paper
         sx={{
-          width: "75%",
           height: "auto",
           background:
             "linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%) border-box",
@@ -141,6 +141,7 @@ const ProfileComponent = () => {
           color: "white",
           padding: "22px",
         }}
+        className="w-[75%] max-[1440px]:w-full"
       >
         <Box sx={{ marginBottom: "24px" }}>
           <Typography
@@ -162,13 +163,13 @@ const ProfileComponent = () => {
           </Typography>
         </Box>
         
-        <div className="w-full flex flex-wrap gap-6">
+        <div className="w-full flex gap-6 h-auto max-[1024px]:flex-wrap">
           {boxData.categories.BoxTwoData.map((item, index) => (
-            <Box key={index} sx={{ width: "31.8%", height: "auto" }}>
+            <div key={index} className="w-[31.8%] h-auto max-[1440px]:w-[49%] max-[1024px]:w-full">
               <Image
                 src={item.image}
                 alt={item.title}
-                className="rounded-[15px] mb-2 w-full h-[200px] object-cover"
+                className="rounded-[15px] mb-2 w-full h-[200px] object-cover max-[1440px]:h-auto"
               />
               <Box sx={{ marginBottom: "24px" }}>
                 <Typography sx={{ fontSize: "10px", color: "#a0aec0" , height: "32px", paddingTop: "6px"}}>
@@ -182,7 +183,8 @@ const ProfileComponent = () => {
                 </Typography>
               </Box>
 
-              <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <div 
+              className="flex items-center justify-between max-[1440px]:">
                 <button className="w-[121px] h-[34px] text-white text-[12px] hover:scale-[1.03] hover:text-gray-300 font-semibold border border-[rgba(255, 255, 255, 0.75)] border-1 rounded-[10px]">
                   VIEW ALL
                 </button>
@@ -192,8 +194,8 @@ const ProfileComponent = () => {
                   <Avatar sx={{ width: "20px", height: "20px" }} alt="Alex" src="/avatar3.webp" />
                   <Avatar sx={{ width: "20px", height: "20px" }} alt="Jordan" src="/avatar4.webp" />
                 </AvatarGroup>
-              </Box>
-            </Box>
+              </div>
+            </div>
           ))}
         </div>
       </Paper>

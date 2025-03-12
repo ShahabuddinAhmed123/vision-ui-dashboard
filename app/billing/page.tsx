@@ -20,44 +20,38 @@ interface BoxThreeItems {
 const Billig = () => {
   const boxOneData = BILLING_DATA || [];
   return (
-    <div className="pt-[110px] overflow-y-auto w-full h-full px-6">
-      <Box
-        sx={{
+    <div className="pt-[110px] overflow-y-auto w-full h-full px-6 ml-[17.125rem] max-[1440px]:ml-0"
+    style={{
+      transition: "margin-left 300ms cubic-bezier(0.4, 0, 0.2, 1), margin-right 300ms cubic-bezier(0.4, 0, 0.2, 1)",
+    }}>
+      <div
+        style={{
           display: "flex",
           width: "100%",
           height: "auto",
           gap: "30px",
           marginBottom: "24px",
         }}
+        className="billingMainDiv"
       >
-        <Box sx={{ width: "1046px", gap: "24px" }}>
-          <Box
-            sx={{
-              width: "100%",
-              display: "flex",
-              alignItems: "center",
-              marginBottom: "28px",
-            }}
+        <div className="billingMainDivTwo w-[75%] gap-[24px]">
+          <div
+            className="billingDivOne w-full flex items-center mb-[28px] gap-[24px] max-[1440px]:flex-col"
           >
             <Grid2
               sx={{
-                width: "511px",
+                width: "100%",
                 padding: "22px",
-                marginRight: "24px",
                 backgroundImage: "url(/billing-background-card.webp)",
                 borderRadius: "20px",
                 position: "relative",
               }}
             >
-              <Box
-                sx={{ paddingX: "16px", paddingBottom: "16px", width: "100%" }}
+              <div
+                className="px-4 pb-4 w-full max-[600px]:px-0"
               >
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                  }}
+                <div
+                  className="flex items-center justify-between"
                 >
                   <Typography
                     sx={{ fontSize: "18px", fontWeight: "600", color: "white" }}
@@ -79,7 +73,7 @@ const Billig = () => {
                       <path d="M12 6.654a6.786 6.786 0 0 1 2.596 5.344A6.786 6.786 0 0 1 12 17.34a6.786 6.786 0 0 1-2.596-5.343A6.786 6.786 0 0 1 12 6.654zm-.87-.582A7.783 7.783 0 0 0 8.4 12a7.783 7.783 0 0 0 2.728 5.926 6.798 6.798 0 1 1 .003-11.854zm1.742 11.854A7.783 7.783 0 0 0 15.6 12a7.783 7.783 0 0 0-2.73-5.928 6.798 6.798 0 1 1 .003 11.854z"></path>
                     </g>
                   </svg>
-                </Box>
+                </div>
                 <Typography
                   sx={{
                     marginTop: "70px",
@@ -88,6 +82,7 @@ const Billig = () => {
                     fontWeight: "600",
                     color: "white",
                   }}
+                  className="cardDetail"
                 >
                   7812 2139 0823 7916
                 </Typography>
@@ -100,16 +95,16 @@ const Billig = () => {
                   </Box>
                   <Box></Box>
                 </Box>
-              </Box>
+              </div>
             </Grid2>
             {/* ///////////////// */}
             <Grid2
-              width={511}
               sx={{
                 borderRadius: "20px",
                 padding: "30px",
                 background:
                   "linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%) border-box",
+                  width: "100%"
               }}
             >
               <Box
@@ -215,25 +210,19 @@ const Billig = () => {
                 </Typography>
               </Box>
             </Grid2>
-          </Box>
+          </div>
           {/* //////////////////// */}
           <Grid2
             sx={{
-              width: "1046px",
+              width: "100%",
               padding: "20px",
               borderRadius: "20px",
               background:
                 "linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%) border-box",
             }}
           >
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                marginBottom: "32px",
-                width: "100%",
-              }}
+            <div
+              className="flex items-center justify-between mb-8 w-full max-[400px]:flex-col"
             >
               <Typography sx={{ fontSize: "18px", fontWeight: "600" }}>
                 Payment Method
@@ -241,15 +230,9 @@ const Billig = () => {
               <button className="w-[141px] h-10 bg-[#0075ff] rounded-xl text-white text-xs font-semibold">
                 ADD NEW CARD
               </button>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                width: "100%",
-                gap: "24px",
-              }}
+            </div>
+            <div
+              className="flex items-center justify-between w-full gap-6 max-[768px]:flex-col"
             >
               <Box
                 sx={{
@@ -258,7 +241,7 @@ const Billig = () => {
                   border: "2px solid rgb(74, 85, 104)",
                   display: "flex",
                   borderRadius: "20px",
-                  width: "50%",
+                  width: "100%",
                   alignItems: "center",
                   justifyContent: "space-between",
                 }}
@@ -296,7 +279,7 @@ const Billig = () => {
                   border: "2px solid rgb(74, 85, 104)",
                   display: "flex",
                   borderRadius: "20px",
-                  width: "50%",
+                  width: "100%",
                   alignItems: "center",
                   justifyContent: "space-between",
                 }}
@@ -321,13 +304,13 @@ const Billig = () => {
                 </Box>
                 <HiPencil />
               </Box>
-            </Box>
+            </div>
           </Grid2>
-        </Box>
+        </div>
         {/* /////////////// */}
-        <Box
-          sx={{
-            width: "511px",
+        <div
+        className="billingDivTwo w-[511px]"
+          style={{
             background:
               "linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%) border-box",
             height: "auto",
@@ -396,27 +379,21 @@ const Billig = () => {
               </Box>
             </Box>
           ))}
-        </Box>
-      </Box>
+        </div>
+      </div>
       {/* /////////////// */}
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          height: "auto",
-          width: "100%",
-          gap: "24px",
-        }}
-      >
+      <div
+        className="flex items-center h-auto w-full gap-6 max-[1024px]:flex-col"
+       >
         <Paper
           sx={{
-            width: "57%",
             height: "auto",
             borderRadius: "20px",
             padding: "22px",
             background:
               "linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%) border-box",
           }}
+          className="max-[1024px]:w-full w-[57%]"
         >
           <Box sx={{ color: "white", fontSize: "18px", fontWeight: "600" }}>
             Billing Information
@@ -541,7 +518,6 @@ const Billig = () => {
         {/* /////////// */}
         <Paper
           sx={{
-            width: "40%",
             height: "100%",
             borderRadius: "20px",
             background:
@@ -550,8 +526,8 @@ const Billig = () => {
             paddingLeft: "22px",
             paddingRight: "22px",
             paddingBottom: "70px",
-
           }}
+          className="max-[1024px]:w-full w-[40%]"
         >
           <Box
             sx={{
@@ -688,7 +664,7 @@ const Billig = () => {
             )
           )}
         </Paper>
-      </Box>
+      </div>
     </div>
   );
 };

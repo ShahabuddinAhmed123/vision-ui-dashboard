@@ -24,10 +24,9 @@ const MyComponent = styled("div")({
 
 const DashFirstComponent = () => {
   return (
-    <Component>
+    <Component id='dashFirstDiv'>
     <Paper
       sx={{
-        width: 377,
         padding: "17px",
         height: 87,
         display: "flex",
@@ -36,7 +35,7 @@ const DashFirstComponent = () => {
           "linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%) border-box",
         borderRadius: "20px",
       }}
-      className="paper "
+      className='w-[377px] max-[1440px]:w-full'
     >
       <Box
         sx={{
@@ -91,7 +90,6 @@ const DashFirstComponent = () => {
     </Paper>
     <Paper
       sx={{
-        width: 377,
         padding: "17px",
         height: 87,
         display: "flex",
@@ -100,7 +98,7 @@ const DashFirstComponent = () => {
           "linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%) border-box",
         borderRadius: "20px",
       }}
-      className="paper "
+     className='w-[377px] max-[1440px]:w-full'
     >
       <Box
         sx={{
@@ -155,7 +153,6 @@ const DashFirstComponent = () => {
     </Paper>
     <Paper
       sx={{
-        width: 377,
         padding: "17px",
         height: 87,
         display: "flex",
@@ -164,7 +161,7 @@ const DashFirstComponent = () => {
           "linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%) border-box",
         borderRadius: "20px",
       }}
-      className="paper "
+      className='w-[377px] max-[1440px]:w-full'
     >
       <Box
         sx={{
@@ -219,7 +216,6 @@ const DashFirstComponent = () => {
     </Paper>
     <Paper
       sx={{
-        width: 377,
         padding: "17px",
         height: 87,
         display: "flex",
@@ -228,8 +224,8 @@ const DashFirstComponent = () => {
           "linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%) border-box",
         borderRadius: "20px",
       }}
-      className="paper "
-    >
+      className='w-[377px] max-[1440px]:w-full'
+      >
       <Box
         sx={{
           display: "flex",

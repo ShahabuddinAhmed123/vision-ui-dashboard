@@ -65,13 +65,12 @@ const SignIn = () => {
   return (
     <div className="w-full h-full flex items-center gap-0">
       <AuthPagesNavbar />
-      <Box
-        sx={{
-          width: "50%",
-          height: "100%",
+      <div
+        style={{
           backgroundImage: "url(/sign-in-background.webp)",
           backgroundPosition: "center",
         }}
+        className="w-1/2 h-full max-[1024px]:hidden"
       >
         <Box
           sx={{
@@ -81,6 +80,7 @@ const SignIn = () => {
             alignItems: "center",
             justifyContent: "center",
             flexDirection: "column",
+            textAlign: "center"
           }}
         >
           <Typography
@@ -108,34 +108,20 @@ const SignIn = () => {
             <span className="opacity-[0.5]">ARD</span>
           </Typography>
         </Box>
-      </Box>
-      <Box
-        sx={{
-          width: "50%",
-          height: "100%",
+      </div>
+      {/* /////////////// */}
+      <div
+        style={{
           background:
             "linear-gradient(159.02deg, rgb(15, 18, 59) 14.25%, rgb(9, 13, 46) 56.45%, rgb(2, 5, 21) 86.14%) transparent",
         }}
+        className="w-1/2 overflow-y-auto overflow-x-none h-full max-[1024px]:w-full max-[1024px]:flex max-[1024px]:justify-center"
       >
-        <Box
-          sx={{
-            marginRight: "100px",
-            width: "450px",
-            height: "100%",
-            marginTop: "160px",
-            marginLeft: "65px",
-            display: "flex",
-            flexDirection: "column",
-          }}
+        <div
+          className="mr-[100px] w-[450px] h-full mt-[160px] ml-[65px] flex flex-col max-[1024px]:mx-auto max-[768px]:w-full"
         >
-          <Box
-            sx={{
-              paddingTop: "24px",
-              paddingX: "24px",
-              marginX: "50px",
-              width: "auto",
-              marginBottom: "35px",
-            }}
+          <div
+            className="pt-6 px-6 mx-[50px] w-auto mb-[35px] max-[480px]:mx-0"
           >
             <Typography
               sx={{
@@ -154,16 +140,10 @@ const SignIn = () => {
             >
               Enter your email and password to sign in
             </Typography>
-          </Box>
+          </div>
 
-          <Box
-            sx={{
-              marginBottom: "50px",
-              paddingX: "24px",
-              width: "auto",
-              marginX: "50px",
-              height: "auto",
-            }}
+          <div
+          className="mb-[50px] px-6 w-auto mx-[50px] h-auto max-[480px]:mx-0"
           >
             <Box
               sx={{
@@ -183,7 +163,7 @@ const SignIn = () => {
               name="email"
                 type="email"
                 id="emailInput"
-                className="w-[300px] h-10 rounded-[15px] bg-[rgb(15, 21, 53)] py-2 px-3 text-sm active:outline-[1px] outline-blue-400 placeholder:text-xs"
+                className="w-[300px] max-[400px]:w-full h-10 rounded-[15px] bg-[rgb(15, 21, 53)] py-2 px-3 text-sm active:outline-[1px] outline-blue-400 placeholder:text-xs"
                 style={{
                   border: "2px solid rgb(74, 85, 104)",
                 }}
@@ -211,7 +191,7 @@ const SignIn = () => {
               name="password"
                 type="password"
                 id="passwordInput"
-                className="w-[300px] h-10 rounded-[15px] bg-[rgb(15, 21, 53)] py-2 px-3 text-sm active:outline-[1px] outline-blue-400 placeholder:text-xs"
+                className="w-[300px] max-[400px]:w-full h-10 rounded-[15px] bg-[rgb(15, 21, 53)] py-2 px-3 text-sm active:outline-[1px] outline-blue-400 placeholder:text-xs"
                 style={{
                   border: "2px solid rgb(74, 85, 104)",
                 }}
@@ -253,10 +233,10 @@ const SignIn = () => {
                 Sign up
               </Link>
             </Typography>
-          </Box>
+          </div>
           <AuthPagesFooter />
-        </Box>
-      </Box>
+        </div>
+      </div>
       <ToastContainer/>
     </div>
   );

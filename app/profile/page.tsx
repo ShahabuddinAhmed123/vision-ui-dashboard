@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import ProfileComponent from "@/dashboardComponents/ProfileComponent";
 import { Box, CircularProgress, Paper, Typography } from "@mui/material";
 import React from "react";
@@ -6,36 +7,25 @@ import { FaInstagram, FaTwitter } from "react-icons/fa";
 import { IoMdArrowRoundForward } from "react-icons/io";
 const Profile = () => {
   return (
-    <div className="pt-[110px] overflow-y-auto w-full h-full px-6">
-      <Box
-        sx={{
-          width: "100%",
-          height: "auto",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          borderRadius: "20",
+    <div className="pt-[110px] overflow-y-auto w-full h-full px-6 ml-[17.125rem] max-[1440px]:ml-0"
+    style={{
+      transition: "margin-left 300ms cubic-bezier(0.4, 0, 0.2, 1), margin-right 300ms cubic-bezier(0.4, 0, 0.2, 1)",
+    }}>
+      <div
+        style={{
           background:
             "linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%) border-box",
-          paddingY: "22px",
-          paddingX: "24px",
         }}
+        className="py-[22px] px-[24px] w-full h-auto flex items-center justify-between rounded-[20px] max-[768px]:flex-col"
       >
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-          }}
+        <div
+         className="flex items-center max-[768px]:flex-col max-[768px]:justify-center max-[768px]:mb-2"
         >
-          <Box
-            sx={{
-              height: "74px",
-              width: "74px",
-              marginRight: "28px",
-            }}
+          <div
+            className="h-[74px] w-[74px] mr-12 max-[768px]:mr-0 max-[768px]:"
           >
             <img src="/box-image.png" alt="image" className="rounded-[15px]" />
-          </Box>
+          </div>
           <Box>
             <Typography
               sx={{ fontSize: "18px", fontWeight: "600", color: "white" }}
@@ -46,9 +36,9 @@ const Profile = () => {
               mark@simmmple.com
             </Typography>
           </Box>
-        </Box>
-        <Box sx={{ width: "auto", display: "flex" }}>
-          <button className="w-[150px] padding-[10px] rounded-[10px] flex justify-center gap-1 bg-blue-500 p-[10px]">
+        </div>
+        <div className="w-auto flex max-[1024px]:w-1/2 max-[1024px]:flex-col max-[768px]:w-full">
+          <button className="w-[150px] padding-[10px] rounded-[10px] flex justify-center gap-1 bg-blue-500 p-[10px] max-[1024px]:w-full">
             <svg
               stroke="currentColor"
               fill="currentColor"
@@ -64,7 +54,7 @@ const Profile = () => {
             </svg>
             <p className="text-xs">OVERVIEW</p>
           </button>
-          <button className="w-[150px] padding-[10px] rounded-[10px] flex justify-center gap-1 p-[10px]">
+          <button className="w-[150px] padding-[10px] rounded-[10px] flex justify-center gap-1 p-[10px] max-[1024px]:w-full">
             <svg
               stroke="currentColor"
               fill="currentColor"
@@ -81,7 +71,7 @@ const Profile = () => {
             </svg>
             <p className="text-xs">TEAMS</p>
           </button>
-          <button className="w-[150px] padding-[10px] rounded-[10px] flex justify-center gap-1 p-[10px]">
+          <button className="w-[150px] padding-[10px] rounded-[10px] flex justify-center gap-1 p-[10px] max-[1024px]:w-full">
             <svg
               stroke="currentColor"
               fill="currentColor"
@@ -97,30 +87,15 @@ const Profile = () => {
             </svg>
             <p className="text-xs">PROJECTS</p>
           </button>
-        </Box>
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          width: "100%",
-          alignItems: "center",
-          gap: "30px",
-          marginTop: "40px",
-          marginBottom: "24px"
-        }}
-      >
-        <Box
-          sx={{
-            width: "24%",
-            padding: "22px",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            borderRadius: "20px",
-            backgroundImage: "url(/welcome-profile-background.webp)",
-            height: "400px",
-            backgroundPosition: "right",
-          }}
+        </div>
+      </div>
+      {/* ////////////////////////// */}
+      <div
+      className="flex w-full items-center gap-[30px] mt-10 mb-6 max-[1440px]:flex-col"
+       >
+        <div
+          className="w-[24%] p-[22px] flex flex-col justify-between rounded-[20px] h-[400px] max-[1440px]:h-[376px] max-[1440px]:w-full bg-[url(/welcome-profile-background.webp)] 
+          bg-cover bg-no-repeat"
         >
           <Box>
             <Typography sx={{ fontSize: "30px", fontWeight: "600" }}>
@@ -138,16 +113,16 @@ const Profile = () => {
               <IoMdArrowRoundForward />
             </span>
           </Box>
-        </Box>
+        </div>
         {/* /////////// */}
         <Paper
           sx={{
-            width: "50%",
             padding: "22px",
             background:
               "linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%) border-box",
             borderRadius: "20px",
           }}
+          className="w-1/2 max-[1440px]:w-full"
         >
           <Box
             sx={{
@@ -166,13 +141,13 @@ const Profile = () => {
                   marginBottom: "6px",
                 }}
               >
-                Card Information
+                Car Information
               </Typography>
               <Typography sx={{ fontSize: "14px", color: "#a0aec0" }}>
                 Hello, Mark Johnson!Your Card is ready.
               </Typography>
             </Box>
-            <Box sx={{ display: "flex" }}>
+            <div className="flex max-[1680px]:flex-col max-[1440px]:flex-row max-[768px]:flex-col">
               <Box
                 sx={{
                   display: "flex",
@@ -180,6 +155,7 @@ const Profile = () => {
                   alignItems: "center",
                   height: "270px",
                   paddingTop: "20px",
+
                 }}
               >
                 <Box
@@ -240,7 +216,7 @@ const Profile = () => {
                   Time to full charge
                 </Typography>
               </Box>
-              <div className="h-auto w-full grid grid-cols-2 ml-[50px] mt-6 gap-6">
+              <div className="h-auto w-full grid grid-cols-2 ml-[50px] mt-6 gap-6 max-[1680px]:ml-0 max-[1680px]:gap-4 max-[1440px]:ml-6 max-[768px]:ml-0 max-[768px]:grid-cols-1">
                 <Box
                   sx={{
                     display: "flex",
@@ -248,7 +224,7 @@ const Profile = () => {
                     justifyContent: "space-between",
                     padding: "18px",
                     borderRadius: "20px",
-                    width: "236px",
+                    width: "100%",
                     height: "111px",
                     background:
                       "linear-gradient(126.97deg, rgb(6, 11, 40) 28.26%, rgb(10, 14, 35) 91.2%)",
@@ -296,7 +272,7 @@ const Profile = () => {
                     justifyContent: "space-between",
                     padding: "18px",
                     borderRadius: "20px",
-                    width: "236px",
+                    width: "100%",
                     height: "111px",
                     background:
                       "linear-gradient(126.97deg, rgb(6, 11, 40) 28.26%, rgb(10, 14, 35) 91.2%)",
@@ -332,7 +308,7 @@ const Profile = () => {
                     justifyContent: "space-between",
                     padding: "18px",
                     borderRadius: "20px",
-                    width: "236px",
+                    width: "100%",
                     height: "111px",
                     background:
                       "linear-gradient(126.97deg, rgb(6, 11, 40) 28.26%, rgb(10, 14, 35) 91.2%)",
@@ -380,7 +356,7 @@ const Profile = () => {
                     justifyContent: "space-between",
                     padding: "18px",
                     borderRadius: "20px",
-                    width: "236px",
+                    width: "100%",
                     height: "111px",
                     background:
                       "linear-gradient(126.97deg, rgb(6, 11, 40) 28.26%, rgb(10, 14, 35) 91.2%)",
@@ -409,18 +385,16 @@ const Profile = () => {
                   <img src="/blue-graph-line.svg" alt="" />
                 </Box>
               </div>
-            </Box>
+            </div>
           </Box>
         </Paper>
         {/* /////////// */}
-        <Box
-          sx={{
-            width: "24%",
-            padding: "22px",
+        <div
+          style={{
             background:
               "linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%) border-box",
-            borderRadius: "20px",
           }}
+          className="w-[24%] p-[22px] rounded-[20px] max-[1440px]:w-full"
         >
           <Typography sx={{fontSize: "18px", fontWeight: "600", color: "white", marginBottom: "16px"}}>Profile Information</Typography>
           <Typography sx={{fontSize: "14px", color: "#a0aec0", marginBottom: "32px"}}>
@@ -452,9 +426,10 @@ const Profile = () => {
           <FaInstagram/>
           </Box>
           </Box>
-        </Box>
-      </Box>
+        </div>
+      </div>
       <ProfileComponent/>
+      <Footer/>
     </div>
   );
 };

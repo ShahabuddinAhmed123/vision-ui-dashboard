@@ -31,7 +31,7 @@ useEffect(() => {
     <>
     {
       pathName !== "/sign-in" && pathName !== "/sign-up" &&(
-    <div className='h-[75px] absolute bg-transparent z-50 w-[83.5%] backdrop-blur-xl py-2 top-3 rounded-2xl mx-5 border left-[270px]'>
+    <div className='h-[75px] absolute bg-transparent z-50 w-[83.5%] backdrop-blur-xl py-2 top-3 rounded-2xl mx-5 border right-0 max-[1440px]:w-[97%]'>
       <Box sx={{
         width: "100%",
         height: "100%",
@@ -73,7 +73,7 @@ useEffect(() => {
           <div className='mx-[10px] text-[#718096]'>
           <FaSearch/>
           </div>
-          <input type="text" className='text-[12px] placeholder:text-[12px]' placeholder='Type here...' />
+          <input type="text" className='text-[12px] placeholder:text-[12px] outline-none' placeholder='Type here...' />
         </Box>
         <Link href="/sign-in">
         <Box sx={{

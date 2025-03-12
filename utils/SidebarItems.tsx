@@ -23,7 +23,7 @@ const SidebarItems: React.FC = () => {
               key={item.path} 
               href={item.path}
               className={`flex items-center gap-4 py-[10px] pr-3 pl-4 w-full rounded-2xl cursor-pointer transition-all
-                ${pathname === item.path ? "bg-[#1a1f37] text-white" : "text-gray-400 "}`}
+                ${pathname === item.path ? "bg-[#1a1f37] text-white" : "text-white "}`}
             >
               <div 
                 className={`w-8 h-8 flex items-center justify-center rounded-xl 

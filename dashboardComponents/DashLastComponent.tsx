@@ -22,25 +22,18 @@ const DashLastComponent = () => {
   const dashData = DASH_LAST_DATA;
 
   return (
-    <Box
-      sx={{
-        width: "100%",
-        height: "auto",
-        marginTop: "24px",
-        display: "flex",
-        alignItems: "center",
-        gap: "30px",
-      }}
+    <div
+      className="w-full h-auto mt-6 flex items-center gap-[30px] mb-6 max-[768px]:flex-col"
     >
       <Paper
         sx={{
           padding: "24px",
           background:
             "linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%) border-box",
-          width: "65%",
           height: "auto",
           borderRadius: "20px",
         }}
+        className="lastBoxOne w-[65%] max-[768px]:w-full max-[1024px]:w-1/2 max-[1024px]:overflow-x-auto"
       >
         <Box
           sx={{
@@ -83,7 +76,7 @@ const DashLastComponent = () => {
         </Box>
         {/* /// */}
         <Box sx={{ width: "100%" }}>
-          <Table sx={{ width: "100%", color: "white" }}>
+          <Table sx={{ width: "100%", color: "white" }} className="dashTable">
             <TableHead>
               <TableRow>
                 <TableCell
@@ -208,12 +201,12 @@ const DashLastComponent = () => {
       </Paper>
       {/* ///////////////////////////////////////////// */}
       <Paper
+      className=" w-[33%] max-[1024px]:w-1/2 max-[768px]:w-full"
         sx={{
           paddingY: "28px",
           paddingX: "17px",
           background:
             "linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%) border-box",
-          width: "33%",
           borderRadius: "20px",
         }}
       >
@@ -285,7 +278,7 @@ const DashLastComponent = () => {
           </div>
         ))}
       </Paper>
-    </Box>
+    </div>
   );
 };
 

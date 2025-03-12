@@ -10,17 +10,15 @@ import React from "react";
 
 const DashThirdComponent = () => {
   return (
-    <Box display="flex" gap={4} marginTop="25px">
-      <Box>
+    <div className="flex gap-1 mt-[25px] gap-6 max-[1024px]:flex-col">
         <Paper
+        className="thirdBoxOne w-[69%] h-[447px] max-[1440px]:w-full"
           sx={{
             padding: "22px",
             background:
               "linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%)",
             borderRadius: "20px",
             color: "white",
-            width: "912px",
-            height: "447px",
           }}
         >
           <Typography sx={{ fontSize: "18px", fontWeight: "600" }}>
@@ -39,7 +37,6 @@ const DashThirdComponent = () => {
           {/* Line Chart */}
           <LineChart
             className="cursor-crosshair"
-            width={869}
             height={310}
             grid={{ horizontal: true }}
             series={[
@@ -114,25 +111,23 @@ const DashThirdComponent = () => {
                 stroke: "rgba(253, 253, 255, 0.2)",
                 strokeDasharray: "4",
               },
+              width: "100%",
             }}
           />
         </Paper>
-      </Box>
 
       {/* Another Card for Future Widgets */}
 
       <Paper
+      className="w-[41%] h-[448px] max-[1440px]:w-full h-auto"
         sx={{
-          width: "645px",
           padding: "22px",
           background:
             "linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%)",
           borderRadius: "20px",
-          height: "448px",
         }}
       >
         <BarChart
-          width={600}
           height={230}
           series={[
             {
@@ -173,6 +168,7 @@ const DashThirdComponent = () => {
               stroke: "rgba(255,255,255,0.2)",
               strokeDasharray: "4",
             },
+            width: "100%",
           }}
         />
         <Box
@@ -200,7 +196,8 @@ const DashThirdComponent = () => {
               display: "flex",
               alignItems: "center",
               marginTop: "20px",
-              gap: "50px"
+              gap: "50px",
+              flexWrap: "wrap"
             }}
           >
             <Box
@@ -325,7 +322,7 @@ const DashThirdComponent = () => {
           </Box>
         </Box>
       </Paper>
-    </Box>
+    </div>
   );
 };
 

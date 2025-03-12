@@ -22,11 +22,11 @@ const DashSecondComponent = () => {
     <Component className="DashSecond">
       <Paper
         sx={{
-          width: "648px",
-          height: "340px",
           backgroundImage: "url(/card-one-background.png)",
           borderRadius: "20px",
+          backgroundRepeat: "no-repeat"
         }}
+        className="w-[648px] h-[340px] max-[1440px]:w-full max-[1440px]:bg-cover max-[1440px]:bg-center"
       >
         <Box
           sx={{
@@ -82,11 +82,16 @@ const DashSecondComponent = () => {
         </Box>
       </Paper>
       {/* //// */}
+      <Box
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        gap: "30px"
+      }}>
       <Paper
+      className="secondBoxTwo w-[382px] h-[340px] max-[1440px]:w-full"
         sx={{
           borderRadius: "20px",
-          width: "382px",
-          height: "340px",
           background:
             "linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%) border-box;",
           padding: "22px",
@@ -115,18 +120,26 @@ const DashSecondComponent = () => {
 
           <Box sx={{
               position: "relative",
+              width: "100%",
+              height: "auto"
           }}>
+            <Box
+            sx={{
+              marginX: "auto",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center"
+            }}>
           <CircularProgress
             variant="determinate"
             value={70}
             size={170}
             style={{
-              marginLeft: "70px",
-              marginTop: " 20px",
               rotate: "30deg",
-            border: "2px solid linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%) border-box"
+            border: "2px solid linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%) border-box",
             }}
             />
+            </Box>
             <Box sx={{
               width: "50px",
               height: "50px",
@@ -138,7 +151,7 @@ const DashSecondComponent = () => {
               top: "50%",
               left: "45%",
               transform: "translate(-50%, -50%)",
-              padding: "13px",
+              padding: "12px",
               color: "white",
               fontSize: "28px"
             }}>
@@ -146,14 +159,14 @@ const DashSecondComponent = () => {
             </Box>
           <Box
             sx={{
-              width: "297px",
+              width: "100%",
               height: "82px",
               position: "absolute",
               background:
                 "linear-gradient(126.97deg, rgb(6, 11, 40) 28.26%, rgb(10, 14, 35) 91.2%)",
               borderRadius: "20px",
               bottom: "-35px",
-              marginLeft: "20px",
+              left: "0px",
               paddingY: "18px",
               paddingX: "22px",
               display: "flex",
@@ -209,10 +222,9 @@ const DashSecondComponent = () => {
       {/* //////////// */}
 
       <Paper
+      className="w-[515px] h-[340px] max-[1440px]:w-full  max-[768px]:h-auto"
         sx={{
           borderRadius: "20px",
-          width: "515px",
-          height: "340px",
           background:
             "linear-gradient(126.97deg, rgba(6, 11, 40, 0.74) 28.26%, rgba(10, 14, 35, 0.71) 91.2%)",
           padding: "22px",
@@ -258,9 +270,12 @@ const DashSecondComponent = () => {
             </Typography>
           </Box>
         </Box>
+
         <Box
           sx={{
             display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between"
           }}
         >
           <Box
@@ -334,15 +349,39 @@ const DashSecondComponent = () => {
               position: "relative",
             }}
           >
-            <CircularProgress
-              variant="determinate"
-              value={65}
-              size={200}
-              sx={{
-                color: "#06b189",
-                rotate: "25deg",
-              }}
-            />
+          <Box sx={{ position: "relative", display: "inline-flex" }}>
+      <CircularProgress
+        variant="determinate"
+        value={100}
+        size={200}
+        thickness={4}
+        sx={{ color: "rgba(10, 10, 10, 0.1)"}}
+      />
+      <CircularProgress
+        variant="determinate"
+        value={65}
+        size={200}
+        thickness={4}
+        sx={{
+          position: "absolute",
+          left: 0,
+          top: "0",
+          color: "transparent",
+          "& .MuiCircularProgress-circle": {
+            stroke: "url(#progressGradient)",
+          },
+          rotate: "30deg"
+        }}
+      />
+      <svg width={0} height={0} >
+        <defs>
+          <linearGradient id="progressGradient" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stopColor="#06b189" />
+            <stop offset="130%" stopColor="rgba(7, 138, 94, 0.11)" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </Box>
             <Box
             sx={{
               position: "absolute",
@@ -383,6 +422,7 @@ const DashSecondComponent = () => {
           </Box>
         </Box>
       </Paper>
+      </Box>
     </Component>
   );
 };
