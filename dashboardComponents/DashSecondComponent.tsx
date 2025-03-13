@@ -6,6 +6,7 @@ import { styled } from "@mui/material";
 import { IoArrowForward } from "react-icons/io5";
 import { SlOptions } from "react-icons/sl";
 import { FaFaceSmile } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 
 const Component = styled("div")({
   width: "100%",
@@ -17,7 +18,24 @@ const Component = styled("div")({
   paddingTop: "18px",
   fontFamily: "Plus Jakarta Sans",
 });
-const DashSecondComponent = () => {
+
+interface DashComponentProps {
+  route: string;
+}
+
+
+const DashSecondComponent: React.FC<DashComponentProps> = ({ route }) => {
+
+   const { t, i18n } = useTranslation();
+    
+      React.useEffect(() => {
+        if (route === '/rtl') {
+          i18n.changeLanguage('ar'); 
+        } else {
+          i18n.changeLanguage('en'); 
+        }
+      }, [route, i18n]);
+
   return (
     <Component className="DashSecond">
       <Paper
@@ -46,7 +64,7 @@ const DashSecondComponent = () => {
                 fontSize: "14px",
               }}
             >
-              Welcome back,
+             {t ("Welcome back,")}
             </Typography>
             <Typography
               sx={{
@@ -64,7 +82,7 @@ const DashSecondComponent = () => {
                 width: "180px",
               }}
             >
-              Glad to see you again! Ask me anything.
+             {t("Glad to see you again! Ask me anything.")}
             </Typography>
           </Box>
           <Box
@@ -76,7 +94,7 @@ const DashSecondComponent = () => {
               alignItems: "center",
             }}
           >
-            Tap to record
+            {t("Tap to record")}
             <IoArrowForward />
           </Box>
         </Box>
@@ -106,7 +124,7 @@ const DashSecondComponent = () => {
               marginBottom: "4px",
             }}
           >
-            Satisfaction Rate
+            {t("Satisfaction Rate")}
           </Typography>
 
           <Typography
@@ -115,7 +133,7 @@ const DashSecondComponent = () => {
               color: "#a0aec0",
             }}
           >
-            From all projects
+            {t("From all projects")}
           </Typography>
 
           <Box sx={{
@@ -149,7 +167,7 @@ const DashSecondComponent = () => {
               background: "#0075ff",
               position: "absolute",
               top: "50%",
-              left: "45%",
+              left: "50%",
               transform: "translate(-50%, -50%)",
               padding: "12px",
               color: "white",
@@ -204,7 +222,7 @@ const DashSecondComponent = () => {
                   color: "#a0aec0",
                 }}
                 >
-                Based on likes
+                {t("Based on likes")}
               </Typography>
             </Box>
             <Typography
@@ -248,7 +266,7 @@ const DashSecondComponent = () => {
               color: "white",
             }}
           >
-            Refferal Tracking
+            {t("Refferal Tracking")}
           </Typography>
           <Box
             sx={{
@@ -300,7 +318,7 @@ const DashSecondComponent = () => {
                   color: "#a0aec0",
                 }}
               >
-                Invited
+                {t("Invited")}
               </Typography>
               <Typography
                 sx={{
@@ -309,7 +327,7 @@ const DashSecondComponent = () => {
                   fontWeight: "600",
                 }}
               >
-                145 people
+                145 {t("people")}
               </Typography>
             </Box>
             <Box
@@ -328,7 +346,7 @@ const DashSecondComponent = () => {
                   color: "#a0aec0",
                 }}
               >
-                Bonus
+                {t("Bonus")}
               </Typography>
               <Typography
                 sx={{
@@ -400,7 +418,7 @@ const DashSecondComponent = () => {
                 fontSize: "14px",
                 fontWeight: "600"
               }}>
-                Safety
+                {t("Safety")}
               </Typography>
               <Typography
               sx={{
@@ -416,7 +434,7 @@ const DashSecondComponent = () => {
                 fontSize: "14px",
                 fontWeight: "600"
               }}>
-                Total score
+                {t("Total score")}
               </Typography>
             </Box>
           </Box>

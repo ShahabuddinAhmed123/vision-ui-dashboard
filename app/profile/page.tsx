@@ -7,7 +7,7 @@ import { FaInstagram, FaTwitter } from "react-icons/fa";
 import { IoMdArrowRoundForward } from "react-icons/io";
 const Profile = () => {
   return (
-    <div className="pt-[110px] overflow-y-auto w-full h-full px-6 ml-[17.125rem] max-[1440px]:ml-0"
+    <div className="pt-[110px] max-[768px]:pt-[130px] overflow-y-auto w-full h-full px-6 ml-[17.125rem] max-[1440px]:ml-0"
     style={{
       transition: "margin-left 300ms cubic-bezier(0.4, 0, 0.2, 1), margin-right 300ms cubic-bezier(0.4, 0, 0.2, 1)",
     }}>
@@ -16,7 +16,7 @@ const Profile = () => {
           background:
             "linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%) border-box",
         }}
-        className="py-[22px] px-[24px] w-full h-auto flex items-center justify-between rounded-[20px] max-[768px]:flex-col"
+        className="mt-5 py-[22px] px-[24px] w-full h-auto flex items-center justify-between rounded-[20px] max-[768px]:flex-col"
       >
         <div
          className="flex items-center max-[768px]:flex-col max-[768px]:justify-center max-[768px]:mb-2"

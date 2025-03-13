@@ -15,11 +15,10 @@ import { SlOptionsVertical } from "react-icons/sl";
 import { TABLES_DATA } from "@/constants/tablesData"
 import Footer from "@/components/Footer";
 
-
 const Tables = () => {
   const tablesData = TABLES_DATA;
   return (
-    <div className="pt-[110px] overflow-y-auto w-full h-full px-6 pb-6 ml-[17.125rem] max-[1440px]:ml-0"
+    <div className="pt-[110px] max-[768px]:pt-[130px] overflow-y-auto w-full h-full px-6 pb-6 ml-[17.125rem] max-[1440px]:ml-0"
     style={{
       transition: "margin-left 300ms cubic-bezier(0.4, 0, 0.2, 1), margin-right 300ms cubic-bezier(0.4, 0, 0.2, 1)",
     }}>
@@ -30,6 +29,7 @@ const Tables = () => {
           display: "flex",
           flexDirection: "column",
           gap: "30px",
+          marginTop: "20px"
         }}
       >
         <Paper

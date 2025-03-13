@@ -7,8 +7,24 @@ import { IoCart } from "react-icons/io5";
 import { BarChart } from "@mui/x-charts";
 import { LineChart } from "@mui/x-charts/LineChart";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
-const DashThirdComponent = () => {
+interface DashComponentProps {
+  route: string;
+}
+
+const DashThirdComponent: React.FC<DashComponentProps> = ({ route }) => {
+
+    const { t, i18n } = useTranslation();
+      
+        React.useEffect(() => {
+          if (route === '/rtl') {
+            i18n.changeLanguage('ar'); 
+          } else {
+            i18n.changeLanguage('en'); 
+          }
+        }, [route, i18n]);
+
   return (
     <div className="flex gap-1 mt-[25px] gap-6 max-[1024px]:flex-col">
         <Paper
@@ -22,7 +38,7 @@ const DashThirdComponent = () => {
           }}
         >
           <Typography sx={{ fontSize: "18px", fontWeight: "600" }}>
-            Sales Overview
+           {t(" Sales Overview")}
           </Typography>
           <Typography
             sx={{
@@ -31,7 +47,7 @@ const DashThirdComponent = () => {
               marginBottom: "20px",
             }}
           >
-            +5% more <span style={{ color: "#aea0c0" }}>in 2021</span>
+            +5% {t("more")} <span style={{ color: "#aea0c0" }}>{t("in")} 2021</span>
           </Typography>
 
           {/* Line Chart */}
@@ -180,7 +196,7 @@ const DashThirdComponent = () => {
             sx={{ fontWeight: "600" }}
             className="text-[18px] text-white"
           >
-            Active Users
+            {t("Active Users")}
           </Typography>
           <Typography
             className="text-[#01b574] "
@@ -189,16 +205,10 @@ const DashThirdComponent = () => {
               fontWeight: "600",
             }}
           >
-            (+23) <span className="text-[#a0aec0]">than last week</span>
+            (+23) <span className="text-[#a0aec0]">{t("than last week")}</span>
           </Typography>
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              marginTop: "20px",
-              gap: "50px",
-              flexWrap: "wrap"
-            }}
+          <div
+          className="flex items-center mt-5 gap-[50px] max-[768px]:flex-wrap max-[1024px]:justify-center"
           >
             <Box
               sx={{
@@ -209,7 +219,7 @@ const DashThirdComponent = () => {
                 <div className="text-white bg-[#0075ff] w-[25px] h-[25px] rounded-[6px] text-sm flex items-center justify-center">
                   <IoWallet />
                 </div>
-                <p className="text-[#a0aec0] text-sm font-semibold">Users</p>
+                <p className="text-[#a0aec0] text-sm font-semibold">{t("Users")}</p>
               </div>
               <Box>
                 <Typography
@@ -239,7 +249,7 @@ const DashThirdComponent = () => {
                 <div className="text-white bg-[#0075ff] w-[25px] h-[25px] rounded-[6px] text-sm flex items-center justify-center">
                   <IoRocketSharp />
                 </div>
-                <p className="text-[#a0aec0] text-sm font-semibold">Clicks</p>
+                <p className="text-[#a0aec0] text-sm font-semibold">{t("Clicks")}</p>
               </div>
               <Box>
                 <Typography
@@ -269,7 +279,7 @@ const DashThirdComponent = () => {
                 <div className="text-white bg-[#0075ff] w-[25px] h-[25px] rounded-[6px] text-sm flex items-center justify-center">
                   <IoCart />
                 </div>
-                <p className="text-[#a0aec0] text-sm font-semibold">Sales</p>
+                <p className="text-[#a0aec0] text-sm font-semibold">{t("Sales")}</p>
               </div>
               <Box>
                 <Typography
@@ -299,7 +309,7 @@ const DashThirdComponent = () => {
                 <div className="text-white bg-[#0075ff] w-[25px] h-[25px] rounded-[6px] text-sm flex items-center justify-center">
                   <HiWrench />
                 </div>
-                <p className="text-[#a0aec0] text-sm font-semibold">Items</p>
+                <p className="text-[#a0aec0] text-sm font-semibold">{t("Items")}</p>
               </div>
               <Box>
                 <Typography
@@ -319,7 +329,7 @@ const DashThirdComponent = () => {
                 />
               </Box>
             </Box>
-          </Box>
+          </div>
         </Box>
       </Paper>
     </div>

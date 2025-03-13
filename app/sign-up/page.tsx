@@ -1,6 +1,6 @@
 "use client";
 
-import AuthPagesNavbar from "@/components/AuthPagesNavbar";
+import AuthPagesNavbar from "@/utils/AuthPagesNavbar";
 import { Box, Typography } from "@mui/material";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -8,14 +8,16 @@ import { FaApple, FaFacebook, FaGoogle } from "react-icons/fa";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
-import AuthPagesFooter from "@/components/AuthPagesFooter";
+import AuthPagesFooter from "@/utils/AuthPagesFooter";
 import { getAuth } from "firebase/auth";
+import AuthResponsiveNav from "@/utils/AuthResponsiveNav";
 
 const SignUp = () => {
   const router = useRouter();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [openResNav, setOpenResNav] = useState(false);
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -37,10 +39,11 @@ const SignUp = () => {
         });
       });
   };
-
-
 const auth = getAuth();
 
+const handleOpenResNav = () => {
+  setOpenResNav(!openResNav);
+};
 // const handleNameUpdate = async (newName: string) => {
 //   if (auth.currentUser) {
 //     try {
@@ -57,7 +60,8 @@ const auth = getAuth();
 
   return (
     <div className="w-full h-auto flex items-center gap-0 overflow-y-auto">
-      <AuthPagesNavbar />
+      <AuthPagesNavbar handleOpenResNav={handleOpenResNav} openResNav={openResNav} />
+      {openResNav && <AuthResponsiveNav />}
       <div
         style={{
           backgroundImage: "url(/sign-up-background.png)",

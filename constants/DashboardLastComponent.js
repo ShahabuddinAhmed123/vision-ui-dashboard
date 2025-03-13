@@ -20,7 +20,6 @@ export const DASH_LAST_DATA = {
         ],
         images: "/iconOne.svg",
         percentage: 60,
-        
       },
       {
         name: "Add Progress Track",

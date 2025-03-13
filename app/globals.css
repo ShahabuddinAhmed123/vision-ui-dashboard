@@ -84,7 +84,9 @@ display: none
   .thirdBoxTwo{
     width: 100%;
   }
-
+.sidebar{
+  background: linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35) 76.65%);
+}
  }
 
  @media only screen and (max-width: 1024px) {

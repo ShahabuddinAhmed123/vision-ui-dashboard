@@ -20,17 +20,18 @@ interface BoxThreeItems {
 const Billig = () => {
   const boxOneData = BILLING_DATA || [];
   return (
-    <div className="pt-[110px] overflow-y-auto w-full h-full px-6 ml-[17.125rem] max-[1440px]:ml-0"
+    <div className="pt-[110px] max-[768px]:pt-[130px] overflow-y-auto w-full h-full px-6 ml-[17.125rem] max-[1440px]:ml-0"
     style={{
       transition: "margin-left 300ms cubic-bezier(0.4, 0, 0.2, 1), margin-right 300ms cubic-bezier(0.4, 0, 0.2, 1)",
     }}>
-      <div
+    <div
         style={{
           display: "flex",
           width: "100%",
           height: "auto",
           gap: "30px",
           marginBottom: "24px",
+          marginTop: "20px"
         }}
         className="billingMainDiv"
       >

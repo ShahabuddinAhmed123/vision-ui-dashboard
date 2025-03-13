@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { SIDEBAR_ITEMS } from "@/constants/sidebarItems"
 
+
 const SidebarItems: React.FC = () => {
   const pathname = usePathname();
 

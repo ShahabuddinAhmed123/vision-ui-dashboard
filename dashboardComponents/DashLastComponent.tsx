@@ -17,9 +17,23 @@ import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { SlOptionsVertical } from "react-icons/sl";
 import { DASH_LAST_DATA } from "@/constants/DashboardLastComponent";
+import { useTranslation } from "react-i18next";
 
-const DashLastComponent = () => {
+interface DashComponentProps {
+  route: string;
+}
+
+const DashLastComponent: React.FC<DashComponentProps> = ({ route }) => {
   const dashData = DASH_LAST_DATA;
+  const { t, i18n } = useTranslation();
+    
+  React.useEffect(() => {
+    if (route === '/rtl') {
+      i18n.changeLanguage('ar'); 
+    } else {
+      i18n.changeLanguage('en'); 
+    }
+  }, [route, i18n]);
 
   return (
     <div
@@ -51,7 +65,7 @@ const DashLastComponent = () => {
                 fontWeight: "600",
               }}
             >
-              Projects
+              {t("Projects")}
             </Typography>
             <Box
               sx={{
@@ -66,7 +80,7 @@ const DashLastComponent = () => {
               <Typography
                 sx={{ color: "#a0aec0", fontSize: "14px", fontWeight: "600" }}
               >
-                30 done this month
+                30 {t("done this month")}
               </Typography>
             </Box>
           </Box>
@@ -80,27 +94,27 @@ const DashLastComponent = () => {
             <TableHead>
               <TableRow>
                 <TableCell
+                align="center"
                   sx={{ color: "#a0aec0", fontSize: "12px", fontWeight: "600" , borderBottom: "1px solid #2d3748" }}
                 >
-                  COMPANIES
+                  {t("COMPANIES")}
                 </TableCell>
                 <TableCell
-                  align="left"
                   sx={{ color: "#a0aec0", fontSize: "12px", fontWeight: "600" , borderBottom: "1px solid #2d3748"}}
                 >
-                  MEMBERS
-                </TableCell>
-                <TableCell
-                  align="center"
-                  sx={{ color: "#a0aec0", fontSize: "12px", fontWeight: "600" , borderBottom: "1px solid #2d3748"}}
-                >
-                  BUDGET
+                  {t("MEMBERS")}
                 </TableCell>
                 <TableCell
                   align="center"
                   sx={{ color: "#a0aec0", fontSize: "12px", fontWeight: "600" , borderBottom: "1px solid #2d3748"}}
                 >
-                  COMPLETION
+                  {t("BUDGET")}
+                </TableCell>
+                <TableCell
+                  align="center"
+                  sx={{ color: "#a0aec0", fontSize: "12px", fontWeight: "600" , borderBottom: "1px solid #2d3748"}}
+                >
+                  {t("COMPLETION")}
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -127,7 +141,7 @@ const DashLastComponent = () => {
                           color: "white",
                         }}
                       >
-                        {item.name}
+                        {t("dashData.boxOne.item.name")}
                       </Typography>
                     </Box>
                   </TableCell>
@@ -194,7 +208,6 @@ const DashLastComponent = () => {
                   </TableCell>
                 </TableRow>
               ))}
-              {/* /////////////////////// */}
             </TableBody>
           </Table>
         </Box>

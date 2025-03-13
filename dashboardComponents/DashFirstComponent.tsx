@@ -6,7 +6,7 @@ import { styled } from "@mui/material";
 import { AiOutlineGlobal } from "react-icons/ai";
 import { IoDocumentText } from "react-icons/io5";
 import { IoCart } from "react-icons/io5";
-
+import { useTranslation } from 'react-i18next';
 
 const MyComponent = styled("div")({
     display: "flex",
@@ -19,10 +19,25 @@ const MyComponent = styled("div")({
     display: "flex",
     gap: "30px",
     background: "transparent",
-    border: "none"
+    border: "none",
+    marginTop: "20px"
   })
 
-const DashFirstComponent = () => {
+  interface DashFirstComponentProps {
+    route: string;
+  }
+  
+  const DashFirstComponent: React.FC<DashFirstComponentProps> = ({ route }) => {
+    const { t, i18n } = useTranslation();
+  
+    React.useEffect(() => {
+      if (route === '/rtl') {
+        i18n.changeLanguage('ar'); 
+      } else {
+        i18n.changeLanguage('en'); 
+      }
+    }, [route, i18n]);
+
   return (
     <Component id='dashFirstDiv'>
     <Paper
@@ -35,7 +50,7 @@ const DashFirstComponent = () => {
           "linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%) border-box",
         borderRadius: "20px",
       }}
-      className='w-[377px] max-[1440px]:w-full'
+      className='w-[377px] max-[1440px]:w-full '
     >
       <Box
         sx={{
@@ -49,7 +64,7 @@ const DashFirstComponent = () => {
             color: "#a0aec0",
           }}
         >
-          Today's Money
+          {t("Today's Money")}
         </Typography>
         <MyComponent>
           <Typography
@@ -112,7 +127,7 @@ const DashFirstComponent = () => {
             color: "#a0aec0",
           }}
         >
-          Today's Users
+          {t("Today's Users")}
         </Typography>
         <MyComponent>
           <Typography
@@ -175,7 +190,7 @@ const DashFirstComponent = () => {
             color: "#a0aec0",
           }}
         >
-          New Clients
+        {t("New Clients")}
         </Typography>
         <MyComponent>
           <Typography
@@ -238,7 +253,7 @@ const DashFirstComponent = () => {
             color: "#a0aec0",
           }}
         >
-          Total Sales
+          {t("Total Sales")}
         </Typography>
         <MyComponent>
           <Typography
