@@ -47,6 +47,9 @@ const Billig = () => {
                 backgroundImage: "url(/billing-background-card.webp)",
                 borderRadius: "20px",
                 position: "relative",
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat"
               }}
             >
               <div
@@ -114,16 +117,13 @@ const Billig = () => {
                   padding: "20px",
                   backgroundImage: "url(/grid2-background.png)",
                   backgroundPosition: "center",
+                  backgroundSize: "cover",
                   borderRadius: "18px",
                   marginBottom: "32px",
                 }}
               >
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                  }}
+                <div
+                  className="flex items-center justify-between"
                 >
                   <Typography
                     sx={{ fontSize: "12px", fontWeight: "600", color: "white" }}
@@ -133,18 +133,16 @@ const Billig = () => {
                   <Typography>
                     <SlOptions />
                   </Typography>
-                </Box>
+                </div>
                 <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-                  <Typography
-                    sx={{
-                      fontSize: "36px",
-                      fontWeight: "600",
-                      color: "white",
+                  <p
+                    style={{
                       lineHeight: "46px",
                     }}
+                    className="text-[36px] font-semibold text-white max-[768px]:text-[28px]"
                   >
                     $25,215
-                  </Typography>
+                  </p>
                   <Box sx={{ display: "flex", alignItems: "center" }}>
                     <Image
                       src="/graph-billing.svg"
@@ -165,12 +163,8 @@ const Billig = () => {
               >
                 NEWEST
               </Typography>
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                }}
+              <div
+                className="flex items-center justify-between"
               >
                 <Box sx={{ display: "flex", gap: "10px" }}>
                   <Box
@@ -210,7 +204,7 @@ const Billig = () => {
                 <Typography sx={{ fontSize: "14px", fontWeight: "600" }}>
                   -$154.50
                 </Typography>
-              </Box>
+              </div>
             </Grid2>
           </div>
           {/* //////////////////// */}
@@ -432,7 +426,7 @@ const Billig = () => {
                   }}
                 >
                   <Typography
-                    sx={{ fontSize: "14px", fontWeight: "600", color: "white" }}
+                    sx={{ fontSize: "14px", fontWeight: "600", color: "white", marginRight: "6px" }}
                   >
                     {item.name}
                   </Typography>
