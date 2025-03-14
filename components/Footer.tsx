@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Footer = () => {
@@ -7,9 +8,9 @@ const Footer = () => {
       @ 2021, Made with ❤️    by Simmmple&Creative Timfor a better web
       </p>
       <div className='flex items-center gap-10 font-semibold max-[768px]:gap-5'>
-        <p>Marketplace</p>
-        <p>Blog</p>
-        <p>Licence</p>
+        <Link href="/dashboard" className='hover:text-gray-400 transition-all duration-300'>Marketplace</Link>
+        <Link href="/dashboard" className='hover:text-gray-400 transition-all duration-300'>Blog</Link>
+        <Link href="/dashboard" className='hover:text-gray-400 transition-all duration-300'>Licence</Link>
       </div>
     </div>
   )
