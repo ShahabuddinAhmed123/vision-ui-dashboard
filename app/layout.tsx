@@ -4,7 +4,6 @@ import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
 import AuthProvider from "@/context/AuthContext";
 import { useState, useEffect } from "react";
-import Head from "next/head";
 import "./globals.css";
 import "./i18n";
 import { usePathname } from "next/navigation";
@@ -17,7 +16,7 @@ export default function RootLayout({
   const [openSidebar, setOpenSidebar] = useState(true);
   const handleOpenSidebar = () => setOpenSidebar(!openSidebar);
   const handleCloseSidebar = () => setOpenSidebar(false);
-  const pathname = usePathname(); 
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleResize = () => {
@@ -27,11 +26,11 @@ export default function RootLayout({
         setOpenSidebar(false);
       }
     };
-    
+
     handleResize();
-    
+
     window.addEventListener("resize", handleResize);
-    
+
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -41,14 +40,32 @@ export default function RootLayout({
     document.body.dir = language === "ar" ? "rtl" : "ltr";
   }, [language]);
 
+  useEffect(() => {
+    document.title = "Vision UI Dashboard";
+    const metaDescription = document.createElement("meta");
+    metaDescription.name = "description";
+    metaDescription.content = "This is my application description.";
+    document.head.appendChild(metaDescription);
+
+    const metaViewport = document.createElement("meta");
+    metaViewport.name = "viewport";
+    metaViewport.content = "width=device-width, initial-scale=1";
+    document.head.appendChild(metaViewport);
+
+    const linkIcon = document.createElement("link");
+    linkIcon.rel = "icon";
+    linkIcon.href = "/favicon.ico";
+    document.head.appendChild(linkIcon);
+
+    return () => {
+      document.head.removeChild(metaDescription);
+      document.head.removeChild(metaViewport);
+      document.head.removeChild(linkIcon);
+    };
+  }, []);
+
   return (
     <html lang={language}>
-      <Head>
-        <title>Vision ui dashboard</title>
-        <meta name="description" content="This is my application description." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <body className="flex">
         <Navbar openSidebar={openSidebar} handleOpenSidebar={handleOpenSidebar} />
         {openSidebar && <Sidebar onClick={handleCloseSidebar} />}
