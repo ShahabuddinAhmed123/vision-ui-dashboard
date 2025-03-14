@@ -54,7 +54,7 @@ export default function RootLayout({
 
     const linkIcon = document.createElement("link");
     linkIcon.rel = "icon";
-    linkIcon.href = "/favicon.ico";
+    linkIcon.href = "/icon.png";
     document.head.appendChild(linkIcon);
 
     return () => {
