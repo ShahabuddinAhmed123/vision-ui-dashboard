@@ -18,7 +18,7 @@ import Footer from "@/components/Footer";
 const Tables = () => {
   const tablesData = TABLES_DATA;
   return (
-    <div className="pt-[110px] max-[768px]:pt-[130px] overflow-y-auto w-full h-full px-6 pb-6 ml-[17.125rem] max-[1440px]:ml-0"
+    <div className="pt-[110px] max-[768px]:pt-[130px] overflow-y-auto w-full h-full px-6 max-[768px]:px-5 pb-6 ml-[17.125rem] max-[1440px]:ml-0"
     style={{
       transition: "margin-left 300ms cubic-bezier(0.4, 0, 0.2, 1), margin-right 300ms cubic-bezier(0.4, 0, 0.2, 1)",
     }}>
@@ -99,11 +99,9 @@ const Tables = () => {
                         paddingLeft: "0px",
                         borderBottom: "1px solid #2d3748"
                     }}>
-                        <Box
-                        sx={{
-                            display: "flex",
-                            
-                        }}>
+                        <div
+                        style={{ display: "flex" }}
+                        className="max-[768px]:w-[200px]">
                             <Box sx={{marginRight: "16px"}}>
                                 <Image
                                 className="rounded-xl"
@@ -122,7 +120,7 @@ const Tables = () => {
                             </Typography>
                             </Box>
 
-                        </Box>
+                        </div>
                     </TableCell>
                     <TableCell sx={{
                       borderBottom: "1px solid #2d3748"
@@ -222,16 +220,16 @@ const Tables = () => {
 
               <TableRow sx={{ height: "57px" }} key={index}>
                 <TableCell sx={{borderBottom: "1px solid #2d3748"}}>
-                  <Box
-                    sx={{ display: "flex", alignItems: "center", gap: "16px" }}
+                  <div
+                    style={{ display: "flex", alignItems: "center", height: "62px"}}
+                    className="max-[768px]:w-[215px]"
                   >
                     <Box sx={{marginRight: "16px"}}>
-                                <Image
-                                className="rounded-xl"
+                                <img
+                                className="rounded-xl w-5 h-5"
                                 src={item.icon}
                                 alt="lll"
-                                width="20"
-                                height="20"/>
+                                />
                             </Box>
                     <Typography
                       sx={{
@@ -242,7 +240,7 @@ const Tables = () => {
                     >
                       {item.title}
                     </Typography>
-                  </Box>
+                  </div>
                 </TableCell>
 
                 <TableCell align="left" sx={{ padding: "8px", borderBottom: "1px solid #2d3748" }}>
@@ -257,7 +255,7 @@ const Tables = () => {
                   {item.status}
                 </TableCell>
 
-                <TableCell align="center" sx={{ display: "flex", justifyContent: "center", padding: "16.8px", borderBottom: "1px solid #2d3748"}}>
+                <TableCell align="center" sx={{  borderBottom: "1px solid #2d3748"}}>
                   <Box>
                     <Typography
                       sx={{ fontWeight: "600", fontSize: "14px" }}

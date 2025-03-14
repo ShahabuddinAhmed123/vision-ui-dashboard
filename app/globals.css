@@ -13,6 +13,9 @@ body {
   overflow-x: hidden;
   overflow-y: hidden;
 }
+body::-webkit-scrollbar{
+  width: 2px;
+}
 .text{
   color: linear-gradient(97.89deg, #FFFFFF 70.67%, rgba(117, 122, 140, 0) 108.55%);
 }

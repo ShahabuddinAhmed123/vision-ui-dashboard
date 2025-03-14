@@ -44,19 +44,6 @@ const auth = getAuth();
 const handleOpenResNav = () => {
   setOpenResNav(!openResNav);
 };
-// const handleNameUpdate = async (newName: string) => {
-//   if (auth.currentUser) {
-//     try {
-//       await updateProfile(auth.currentUser, {
-//         displayName: newName,
-//       });
-//       console.log("Profile updated!");
-//     } catch (error) {
-//       console.error("Error updating profile:", error);
-//     }
-//   }
-// };
-
 
   return (
     <div className="w-full h-auto flex items-center gap-0 overflow-y-auto">
@@ -116,7 +103,7 @@ const handleOpenResNav = () => {
         className="w-1/2 overflow-y-auto overflow-x-none h-full max-[1024px]:w-full max-[1024px]:flex max-[1024px]:justify-center"
       >
         <div 
-        className="mr-[100px] w-[450px] h-full mt-[160px] ml-[65px] flex flex-col max-[1024px]:mx-auto max-[768px]:w-full"
+        className="mr-[100px] w-[450px] h-full mt-[160px] max-[768px]:mt-[90px] ml-[65px] flex flex-col max-[1024px]:mx-auto max-[768px]:w-full"
         >
           <div
           className="pt-6 px-6 mx-[50px] w-auto mb-[35px] max-[1024px]:mb-0 max-[480px]:mx-0"
@@ -145,7 +132,7 @@ const handleOpenResNav = () => {
           </div>
 
           <div
-          className="w-full px-6 mt-[60px] mb-[50px] h-auto max-[480px]:mx-0"
+          className="w-full px-6 mt-[60px] max-[768px]:mt-10 mb-[50px] h-auto max-[480px]:mx-0"
           >
             <div
               style={{

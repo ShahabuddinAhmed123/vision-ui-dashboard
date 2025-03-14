@@ -46,12 +46,16 @@ const SignIn = () => {
     const handleOpenResNav = () => {
         setOpenResNav(!openResNav);
     };
+    const handleCloseResNav = () => {
+        setOpenResNav(false)
+    }
 
     return (
         <div className="w-full relative h-full flex items-center gap-0">
             <AuthPagesNavbar handleOpenResNav={handleOpenResNav} openResNav={openResNav} />
             {openResNav && <AuthResponsiveNav />}
             <div
+             onClick={handleCloseResNav}
                 style={{
                     backgroundImage: "url(/sign-in-background.webp)",
                     backgroundPosition: "center",
@@ -96,6 +100,7 @@ const SignIn = () => {
                 </Box>
             </div>
             <div
+             onClick={handleCloseResNav}
                 style={{
                     background:
                         "linear-gradient(159.02deg, rgb(15, 18, 59) 14.25%, rgb(9, 13, 46) 56.45%, rgb(2, 5, 21) 86.14%) transparent",
@@ -148,7 +153,7 @@ const SignIn = () => {
                                 name="email"
                                 type="email"
                                 id="emailInput"
-                                className="w-[300px] max-[400px]:w-full h-10 rounded-[15px] bg-[rgb(15, 21, 53)] py-2 px-3 text-sm active:outline-[1px] outline-blue-400 placeholder:text-xs"
+                                className="w-[300px] max-[768px]:w-full h-10 rounded-[15px] bg-[rgb(15, 21, 53)] py-2 px-3 text-sm active:outline-[1px] outline-blue-400 placeholder:text-xs"
                                 style={{
                                     border: "2px solid rgb(74, 85, 104)",
                                 }}
@@ -176,7 +181,7 @@ const SignIn = () => {
                                 name="password"
                                 type="password"
                                 id="passwordInput"
-                                className="w-[300px] max-[400px]:w-full h-10 rounded-[15px] bg-[rgb(15, 21, 53)] py-2 px-3 text-sm active:outline-[1px] outline-blue-400 placeholder:text-xs"
+                                className="w-[300px] max-[768px]:w-full h-10 rounded-[15px] bg-[rgb(15, 21, 53)] py-2 px-3 text-sm active:outline-[1px] outline-blue-400 placeholder:text-xs"
                                 style={{
                                     border: "2px solid rgb(74, 85, 104)",
                                 }}

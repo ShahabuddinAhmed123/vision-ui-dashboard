@@ -50,7 +50,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ onClick }) => {
           />
           <div className="h-[87%] mx-5 mt-5 flex flex-col justify-between items-center max-[600px]:items-start">
             <div className="w-[219px] h-[408px] max-[600px]:w-full">
-              <SidebarItems />
+              <SidebarItems closeSidebar={onClick}/>
             </div>
             <div className="mb-4 w-full ">
               <img

@@ -1,9 +1,11 @@
-import Hamburger, { AuthHamburger } from "@/utils/AuthHamburger";
-import { Box, Typography } from "@mui/material";
+import AuthHamburger from "@/utils/AuthHamburger";
+import { Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
 import { IoPerson, IoPersonCircle } from "react-icons/io5";
 import { MdDonutLarge, MdVpnKey } from "react-icons/md";
+import { RxCross2 } from "react-icons/rx";
 
 interface AuthPagesNavbarProps {
   handleOpenResNav: () => void;
@@ -63,7 +65,16 @@ export const AuthPagesNavbar:React.FC<AuthPagesNavbarProps> = ({ handleOpenResNa
       <button className="text-[12px] font-semibold bg-[#0075ff] py-3 px-6 rounded-[10px] max-[1024px]:hidden">
         BUY NOW
       </button>
-      <AuthHamburger  onClick={handleOpenResNav}  isOpen={openResNav}/>
+      <div className='min-[1024px]:hidden'>
+                {!openResNav ? 
+                <div onClick={handleOpenResNav}>
+              <GiHamburgerMenu />
+                </div>
+                : 
+                <div onClick={handleOpenResNav}>
+              <RxCross2/>
+                </div>}
+              </div>
     </div>
   );
 };

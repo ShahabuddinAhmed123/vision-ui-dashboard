@@ -141,7 +141,7 @@ const DashLastComponent: React.FC<DashComponentProps> = ({ route }) => {
                           color: "white",
                         }}
                       >
-                        {t("dashData.boxOne.item.name")}
+                        {t(`dashData.boxOne.item${index + 1}.name`)} 
                       </Typography>
                     </Box>
                   </TableCell>
@@ -235,7 +235,7 @@ const DashLastComponent: React.FC<DashComponentProps> = ({ route }) => {
               fontWeight: "600",
             }}
           >
-            Orders overview
+            {t("Orders overview")}
           </Typography>
           <Box
             sx={{
@@ -250,7 +250,7 @@ const DashLastComponent: React.FC<DashComponentProps> = ({ route }) => {
             <Typography
               sx={{ color: "#a0aec0", fontSize: "14px", fontWeight: "600" }}
             >
-              +30% this month
+              +30% {t("this month")}
             </Typography>
           </Box>
         </Box>
@@ -276,7 +276,7 @@ const DashLastComponent: React.FC<DashComponentProps> = ({ route }) => {
                     fontWeight: "600",
                   }}
                 >
-                  {item.title}
+                  {t(`dashData.boxTwo.item${index + 1}.title`)}
                 </Typography>
                 <Typography
                   sx={{
