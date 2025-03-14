@@ -53,10 +53,7 @@ display: none
   background: linear-gradient(126.97deg, rgb(6, 11, 40) 28.26%, rgb(10, 14, 35) 91.2%);
   border-radius: 20px;
 }
-/* .css-195sd4n-MuiChartsGrid-line{
-  border: dashed;
-  background-color: white;
-} */
+
  @media only screen and (max-width: 1440px) {
   #dashFirstDiv{
     display: grid;

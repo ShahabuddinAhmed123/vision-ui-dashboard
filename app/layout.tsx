@@ -6,8 +6,8 @@ import AuthProvider from "@/context/AuthContext";
 import { useState, useEffect } from "react";
 import "./globals.css";
 import "./i18n"
-import { useTranslation } from "react-i18next";
 import { usePathname } from "next/navigation";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -51,4 +51,3 @@ export default function RootLayout({
     </html>
   );
 }
-

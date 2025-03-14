@@ -130,10 +130,9 @@ const DashLastComponent: React.FC<DashComponentProps> = ({ route }) => {
                         display: "flex",
                         alignItems: "center",
                         gap: "16px",
-                       
                       }}
                     >
-                      <img src={item.images} alt={item.name} />
+                      <img src={item.images} alt="tables images" />
                       <Typography
                         sx={{
                           fontSize: "14px",
