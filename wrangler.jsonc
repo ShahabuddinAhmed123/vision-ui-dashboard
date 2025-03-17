@@ -8,8 +8,8 @@
     
     
     "assets": {
-      "directory": ".open-next/stellar",
-      "binding": "STELLAR",
+      "directory": ".open-next/assets",
+      "binding": "ASSETS",
     },
     
     "kv_namespaces": [
