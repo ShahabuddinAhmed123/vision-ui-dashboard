@@ -1,12 +1,12 @@
 {
   "/_not-found/page": "/_not-found",
   "/icon.png/route": "/icon.png",
-  "/dashboard/page": "/dashboard",
   "/billing/page": "/billing",
   "/profile/page": "/profile",
-  "/page": "/",
-  "/sign-in/page": "/sign-in",
+  "/dashboard/page": "/dashboard",
   "/rtl/page": "/rtl",
+  "/sign-in/page": "/sign-in",
   "/sign-up/page": "/sign-up",
-  "/tables/page": "/tables"
+  "/tables/page": "/tables",
+  "/page": "/"
 }
