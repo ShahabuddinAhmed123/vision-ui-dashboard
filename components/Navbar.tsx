@@ -98,7 +98,7 @@ useEffect(() => {
         </Box>
         </Link>
 
-        <div className='min-[1440px]:hidden'>
+        <div className='min-[1440px]:hidden cursor-pointer'>
           {!openSidebar ? 
           <div onClick={handleOpenSidebar}>
         <GiHamburgerMenu />
