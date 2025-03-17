@@ -11,6 +11,9 @@
 "deploy": "opennextjs-cloudflare && wrangler deploy",
 "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
+  "engines": {
+  "node": ">=18.18.0"
+},
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
